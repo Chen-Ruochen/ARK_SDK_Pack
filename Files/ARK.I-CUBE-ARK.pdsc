@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-24" version="1.0.5">-Fix FlexBtn define</release>
         <release date="2024-12-24" version="1.0.4">-Add FlexBtn Template</release>
         <release date="2024-12-24" version="1.0.3">-Remove params</release>
         <release date="2024-12-24" version="1.0.2">-Add FlexBtn Params</release>
@@ -31,7 +32,7 @@
                 <file category="header" name="Middlewares/Third_Party/Files/common_lib.h"/>
             </files>
         </component>
-        <bundle Cbundle="Files" Cclass="Driver" Cversion="1.0.3">
+        <bundle Cbundle="Files" Cclass="Driver" Cversion="1.0.5">
             <description>Bundle of drivers</description>
             <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
             <component Cgroup="Button" Cvariant="FlexBtn" condition="Condition Need Top Header" maxInstances="1">

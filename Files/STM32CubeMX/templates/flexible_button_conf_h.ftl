@@ -12,7 +12,7 @@ extern "C" {
 
 [#if SWIP.defines??]
     [#list SWIP.defines as definition]
-#define ${definition.name} #t#t ${definition.value}
+#define ${definition.name} #t#t (${definition.value})
     [/#list]
 [/#if]
 
