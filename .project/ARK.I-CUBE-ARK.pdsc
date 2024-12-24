@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-24" version="1.0.4">-Add FlexBtn Template</release>
         <release date="2024-12-24" version="1.0.3">-Remove params</release>
         <release date="2024-12-24" version="1.0.2">-Add FlexBtn Params</release>
         <release date="2024-12-24" version="1.0.1">-Add FlexBtn Param</release>
@@ -12,6 +13,7 @@
     </releases>
     <keywords>
         <keyword>CUBE_RULES_COMPLIANT</keyword>
+        <keyword>IMPLEMENTED_WITH_STM32CUBEMX</keyword>
     </keywords>
     <taxonomy>
         <description Cclass="Common">Common</description>

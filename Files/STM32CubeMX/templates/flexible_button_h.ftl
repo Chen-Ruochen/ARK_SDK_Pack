@@ -1,3 +1,4 @@
+[#ftl]
 /**********************************
  * @Description  : Flexible button driver
  * @Author       : Jason Chen
@@ -10,12 +11,14 @@
 #define FLEXIBLE_BUTTON_H__
 
 #include "common_lib.h"
-#include "flexible_button_conf.h"
 
-#ifndef FLEX_BTN_CONF_SCAN_FREQ_HZ
-#define FLEX_BTN_CONF_SCAN_FREQ_HZ (50)
-#endif
-#define FLEX_BTN_SCAN_FREQ_HZ FLEX_BTN_CONF_SCAN_FREQ_HZ // How often flex_button_scan () is called
+[#list SWIPdatas as SWIP]
+
+[#if SWIP.defines??]
+    [#list SWIP.defines as definition]
+#define ${definition.name} #t#t ${definition.value}
+    [/#list]
+[/#if]
 #define FLEX_MS_TO_SCAN_CNT(ms) (ms / (1000 / FLEX_BTN_SCAN_FREQ_HZ))
 
 /* Multiple clicks interval, default 300ms */
@@ -73,3 +76,5 @@ uint8_t flex_button_scan(void);
 }
 #endif
 #endif /* __FLEXIBLE_BUTTON_H__ */
+
+[/#list]
