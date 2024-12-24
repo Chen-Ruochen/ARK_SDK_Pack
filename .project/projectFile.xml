@@ -5,38 +5,38 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-24" version="1.0.3">-Remove params</release>
         <release date="2024-12-24" version="1.0.2">-Add FlexBtn Params</release>
         <release date="2024-12-24" version="1.0.1">-Add FlexBtn Param</release>
         <release date="2024-12-24" version="1.0.0">-Initialized SDK</release>
     </releases>
     <keywords>
         <keyword>CUBE_RULES_COMPLIANT</keyword>
-        <keyword>IMPLEMENTED_WITH_STM32CUBEMX</keyword>
     </keywords>
     <taxonomy>
-        <description Cclass="Common Files">Common Files</description>
+        <description Cclass="Common">Common</description>
         <description Cclass="Driver">Driver</description>
     </taxonomy>
     <conditions>
-        <condition id="Condition Driver FlexBtn">
-            <require Cclass="Common Files" Cgroup="Top Header"/>
+        <condition id="Condition Need Top Header">
+            <require Cclass="Common" Cgroup="Files"/>
         </condition>
     </conditions>
     <components>
-        <component Cclass="Common Files" Cgroup="Top Header" Cversion="1.0.0" maxInstances="1">
+        <component Cclass="Common" Cgroup="Files" Cversion="1.0.3" maxInstances="1">
             <description>Common header files</description>
             <files>
-                <file category="header" name="D:/ARK_SDK/Common/common_lib.h::Middlewares/Third_Party/Top Header/common_lib.h"/>
+                <file category="header" name="D:/ARK_SDK/Common/common_lib.h::Middlewares/Third_Party/Files/common_lib.h"/>
             </files>
         </component>
-        <bundle Cbundle="Button" Cclass="Driver" Cversion="1.0.2">
-            <description>Bundle of flexbtn</description>
+        <bundle Cbundle="Files" Cclass="Driver" Cversion="1.0.3">
+            <description>Bundle of drivers</description>
             <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
-            <component Cgroup="FlexBtn" condition="Condition Driver FlexBtn" maxInstances="1">
+            <component Cgroup="Button" Cvariant="FlexBtn" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of flexbtn</description>
                 <files>
-                    <file category="source" name="D:/ARK_SDK/Driver/flex_button/flexible_button.c::Middlewares/Third_Party/FlexBtn/flexible_button.c"/>
-                    <file category="header" name="D:/ARK_SDK/Driver/flex_button/flexible_button.h::Middlewares/Third_Party/FlexBtn/flexible_button.h"/>
+                    <file category="source" name="D:/ARK_SDK/Driver/flex_button/flexible_button.c::Middlewares/Third_Party/Button/flexible_button.c"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/flex_button/flexible_button.h::Middlewares/Third_Party/Button/flexible_button.h"/>
                 </files>
             </component>
         </bundle>
