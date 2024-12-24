@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<IP xmlns="http://mcd.rou.st.com/modules.php?name=mcu" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" DBVersion="V4.0" Name="I-CUBE-ARK" RootFolder="Packs/ARK/I-CUBE-ARK/1.0.1/" Version="1.0.1" ns0:schemaLocation="http://mcd.rou.st.com/modules.php?name=mcu ../../../../../../../doc/V4/Development/Specifications/db/thirdPartyDb.xsd">
+    <RefConfig Name="CommonOoFilesJjTopOoHeader">
+        <Component Name="CommonOoFiles:TopOoHeader:$CommonOoFilesJjTopOoHeader"/>
+    </RefConfig>
+    <RefConfig Name="DriverJjButton">
+        <Component Name="ButtonCcDriver:FlexBtn:$ButtonCcDriverJjFlexBtn"/>
+        <ConfigFile Name="DriverJjButton_conf"/>
+    </RefConfig>
+    <RefConfigFile Added="true" Name="DriverJjButton_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./ARK.I-CUBE-ARK_conf.h"/>
+        <Argument AddressOf="false" Comment="Param_Driver_FlexBtn" GenericType="simple" Name="Param_Driver_FlexBtn" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefComponent Cclass="CommonOoFiles" Cgroup="TopOoHeader" Cversion="1Gg0Gg0">
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/Top Header/common_lib.h"/>
+    </RefComponent>
+    <RefComponent Cclass="ButtonCcDriver" Cgroup="FlexBtn" Cversion="1Gg0Gg0">
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/FlexBtn/flexible_button.c"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/FlexBtn/flexible_button.h"/>
+    </RefComponent>
+</IP>
