@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<package schemaVersion="1.7.7" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+    <vendor>ARK</vendor>
+    <name>I-CUBE-ARK::FROM_SCRATCH_NOT_GENERATED::CUBE_RULES</name>
+    <description>ARK SDK Source Code</description>
+    <url/>
+    <releases>
+        <release date="2024-12-24" version="1.0.0">-Initialized SDK</release>
+    </releases>
+</package>
