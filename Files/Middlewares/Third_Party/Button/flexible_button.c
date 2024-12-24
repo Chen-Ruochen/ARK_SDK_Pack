@@ -95,7 +95,6 @@ int32_t flex_button_register(flex_button_t *button)
     button->event = FLEX_BTN_PRESS_NONE;
     button->scan_cnt = 0;
     button->click_cnt = 0;
-    button->max_multiple_clicks_interval = MAX_MULTIPLE_CLICKS_INTERVAL;
     btn_head = button;
 
     /**

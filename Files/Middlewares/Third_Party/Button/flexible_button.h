@@ -10,16 +10,6 @@
 #define FLEXIBLE_BUTTON_H__
 
 #include "common_lib.h"
-#include "flexible_button_conf.h"
-
-#ifndef FLEX_BTN_CONF_SCAN_FREQ_HZ
-#define FLEX_BTN_CONF_SCAN_FREQ_HZ (50)
-#endif
-#define FLEX_BTN_SCAN_FREQ_HZ FLEX_BTN_CONF_SCAN_FREQ_HZ // How often flex_button_scan () is called
-#define FLEX_MS_TO_SCAN_CNT(ms) (ms / (1000 / FLEX_BTN_SCAN_FREQ_HZ))
-
-/* Multiple clicks interval, default 300ms */
-#define MAX_MULTIPLE_CLICKS_INTERVAL (FLEX_MS_TO_SCAN_CNT(300))
 
 typedef void (*flex_button_response_callback)(void*);
 
