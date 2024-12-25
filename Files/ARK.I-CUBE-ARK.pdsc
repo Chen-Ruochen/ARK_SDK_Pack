@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-25" version="1.1.2">-Add Protocol RCP</release>
         <release date="2024-12-25" version="1.1.1">-Add Module CRC
 -Add Module QFsm
 -Add Module RingFIFO</release>
@@ -24,6 +25,7 @@
         <keyword>CUBE_RULES_COMPLIANT</keyword>
     </keywords>
     <taxonomy>
+        <description Cclass="Protocol">Protocol</description>
         <description Cclass="Module">Module</description>
         <description Cclass="Common">Common</description>
         <description Cclass="Driver">Driver</description>
@@ -31,6 +33,12 @@
     <conditions>
         <condition id="Condition Need Top Header">
             <require Cclass="Common" Cgroup="Header"/>
+        </condition>
+        <condition id="Condition RCP">
+            <require Cclass="Common" Cgroup="Header"/>
+            <require Cclass="Module" Cgroup="CRC16"/>
+            <require Cclass="Module" Cgroup="QFsm"/>
+            <require Cclass="Module" Cgroup="RingFIFO"/>
         </condition>
     </conditions>
     <components>
@@ -41,7 +49,7 @@
             </files>
         </component>
         <bundle Cbundle="Files" Cclass="Driver" Cversion="1.1.0">
-            <description>Bundle of drivers</description>
+            <description>Bundle of Drivers</description>
             <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
             <component Cgroup="Button" Cvariant="FlexBtn" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of FlexBtn</description>
@@ -52,7 +60,7 @@
             </component>
         </bundle>
         <bundle Cbundle="Files" Cclass="Module" Cversion="1.0.0">
-            <description>Bundle of modules</description>
+            <description>Bundle of Modules</description>
             <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
             <component Cgroup="CRC16" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of CRC16</description>
@@ -73,6 +81,17 @@
                 <files>
                     <file category="source" name="Middlewares/Third_Party/RingFIFO/ring_fifo.c"/>
                     <file category="header" name="Middlewares/Third_Party/RingFIFO/ring_fifo.h"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="Files" Cclass="Protocol" Cversion="1.0.0">
+            <description>Bundle of Protocol</description>
+            <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
+            <component Cgroup="RCP" condition="Condition RCP" maxInstances="1">
+                <description>Component of RCP</description>
+                <files>
+                    <file category="source" name="Middlewares/Third_Party/RCP/protocol_rcp.c"/>
+                    <file category="header" name="Middlewares/Third_Party/RCP/protocol_rcp.h"/>
                 </files>
             </component>
         </bundle>
