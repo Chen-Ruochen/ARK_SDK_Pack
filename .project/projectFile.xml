@@ -5,6 +5,9 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-25" version="1.1.1">-Add Module CRC
+-Add Module QFsm
+-Add Module RingFIFO</release>
         <release date="2024-12-25" version="1.1.0">-Remove CubeMX templates</release>
         <release date="2024-12-25" version="1.0.9">Fixed some errors</release>
         <release date="2024-12-25" version="1.0.8">-Fixed some errors</release>
@@ -21,6 +24,7 @@
         <keyword>CUBE_RULES_COMPLIANT</keyword>
     </keywords>
     <taxonomy>
+        <description Cclass="Module">Module</description>
         <description Cclass="Common">Common</description>
         <description Cclass="Driver">Driver</description>
     </taxonomy>
@@ -40,10 +44,35 @@
             <description>Bundle of drivers</description>
             <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
             <component Cgroup="Button" Cvariant="FlexBtn" condition="Condition Need Top Header" maxInstances="1">
-                <description>Component of flexbtn</description>
+                <description>Component of FlexBtn</description>
                 <files>
                     <file category="source" name="D:/ARK_SDK/Driver/flex_button/flexible_button.c::Middlewares/Third_Party/Button/flexible_button.c"/>
                     <file category="header" name="D:/ARK_SDK/Driver/flex_button/flexible_button.h::Middlewares/Third_Party/Button/flexible_button.h"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="Files" Cclass="Module" Cversion="1.0.0">
+            <description>Bundle of modules</description>
+            <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
+            <component Cgroup="CRC16" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of CRC16</description>
+                <files>
+                    <file category="source" name="D:/ARK_SDK/Common/CRC/crc16_XMODEM.c::Middlewares/Third_Party/CRC16/crc16_XMODEM.c"/>
+                    <file category="header" name="D:/ARK_SDK/Common/CRC/crc16_XMODEM.h::Middlewares/Third_Party/CRC16/crc16_XMODEM.h"/>
+                </files>
+            </component>
+            <component Cgroup="QFsm" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of QFsm</description>
+                <files>
+                    <file category="source" name="D:/ARK_SDK/Common/QFsm/QFsm.c::Middlewares/Third_Party/QFsm/QFsm.c"/>
+                    <file category="header" name="D:/ARK_SDK/Common/QFsm/QFsm.h::Middlewares/Third_Party/QFsm/QFsm.h"/>
+                </files>
+            </component>
+            <component Cgroup="RingFIFO" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of RingFIFO</description>
+                <files>
+                    <file category="source" name="D:/ARK_SDK/Common/Ring_FIFO/ring_fifo.c::Middlewares/Third_Party/RingFIFO/ring_fifo.c"/>
+                    <file category="header" name="D:/ARK_SDK/Common/Ring_FIFO/ring_fifo.h::Middlewares/Third_Party/RingFIFO/ring_fifo.h"/>
                 </files>
             </component>
         </bundle>
