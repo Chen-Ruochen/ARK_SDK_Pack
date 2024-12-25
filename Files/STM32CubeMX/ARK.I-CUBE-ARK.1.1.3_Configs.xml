@@ -8,6 +8,7 @@
         <ConfigFile Name="FLEXBTN_APP_H"/>
         <ConfigFile Name="FLEXBTN_APP_C"/>
         <ConfigFile Name="FLEXBTN_CONF_H"/>
+        <ConfigFile Name="DriverJjFiles_conf"/>
     </RefConfig>
     <RefConfig Name="ModuleJjFiles">
         <Component Name="FilesCcModule:CRC16:$FilesCcModuleJjCRC16"/>
@@ -26,6 +27,10 @@
     <RefConfigFile Added="true" Description="FLEXBTN_CONF_H" Name="FLEXBTN_CONF_H" Template="flexbtnconf_h.ftl">
         <File Category="header" Condition="SEMFilesCcDriverJjButtonJjFlexBtn" Name="App/flexbtn_conf.h"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_VERSION" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Name="DriverJjFiles_conf" Template="default_conf.ftl">
+        <File Category="header" Condition="all" Name="./ARK.I-CUBE-ARK_conf.h"/>
+        <Argument AddressOf="false" Comment="FLEXBTN_LPL" GenericType="simple" Name="FLEXBTN_LPL" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefComponent Cclass="Common" Cgroup="Header" Cversion="1Gg0Gg4">
         <File Category="header" Condition="" Name="Middlewares/Third_Party/Header/common_lib.h"/>

@@ -13,13 +13,13 @@
 
 [#-- SWIPdatas is a list of SWIPconfigModel --]
 [#list SWIPdatas as SWIP]
-
 [#if SWIP.defines??]
-    [#list SWIP.defines as definition]
-#define ${definition.name} #t#t ${definition.value}
-    [/#list]
+[#list SWIP.defines as definition]
+[#if definition.name != "FLEXBTN_VERSION"]
+#define ${definition.name} #t#t (${definition.value})
 [/#if]
-
+[/#list]
+[/#if]
 [/#list]
 
 #ifdef __cplusplus

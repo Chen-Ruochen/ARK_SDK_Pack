@@ -11,6 +11,9 @@
         <Parameter Added="true" Name="FLEXBTN_VERSION">
             <Condition Diagnostic="" Expression="SEMFilesCcDriverJjButtonJjFlexBtn" Name="FlexBtn_Enabled"/>
         </Parameter>
+        <Parameter Added="true" Name="FLEXBTN_LPL">
+            <Condition Diagnostic="" Expression="SEMFilesCcDriverJjButtonJjFlexBtn" Name="FlexBtn_Enabled"/>
+        </Parameter>
     </RefMode>
     <RefMode Abstract="true" Name="ModuleJjFiles">
         <ConfigForMode>ModuleJjFiles</ConfigForMode>
@@ -90,5 +93,9 @@
     </RefParameter>
     <RefParameter Comment="Condition Ii Condition Oo Need Oo Top Oo Header" DefaultValue="true" Name="CONDITIONIiConditionOoNeedOoTopOoHeader" Type="boolean" Visible="false"/>
     <RefParameter Comment="Condition Ii Condition Oo Rcp" DefaultValue="true" Name="CONDITIONIiConditionOoRCP" Type="boolean" Visible="false"/>
+    <RefParameter Added="true" Comment="FLEXBTN_LPL" DefaultValue="0" Group="Basic Parameters" Name="FLEXBTN_LPL" TabName="FlexBtn" Type="list">
+        <PossibleValue Comment="Low" Value="0"/>
+        <PossibleValue Comment="High" Value="1"/>
+    </RefParameter>
     <RefParameter Added="true" Comment="FLEXBTN_VERSION" DefaultValue="V1.1.0" Group="Basic Parameters" Name="FLEXBTN_VERSION" TabName="FlexBtn" Type="string"/>
 </IP>
