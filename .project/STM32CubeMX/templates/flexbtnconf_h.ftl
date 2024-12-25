@@ -11,10 +11,15 @@
 
 #include "common_lib.h"
 
+[#-- SWIPdatas is a list of SWIPconfigModel --]
 [#list SWIPdatas as SWIP]
+
 [#if SWIP.defines??]
-[#list SWIP.defines as definition]
+    [#list SWIP.defines as definition]
 #define ${definition.name} #t#t ${definition.value}
+    [/#list]
+[/#if]
+
 [/#list]
 
 #ifdef __cplusplus
