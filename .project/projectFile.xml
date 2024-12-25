@@ -5,6 +5,9 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-25" version="1.1.0">-Remove CubeMX templates</release>
+        <release date="2024-12-25" version="1.0.9">Fixed some errors</release>
+        <release date="2024-12-25" version="1.0.8">-Fixed some errors</release>
         <release date="2024-12-24" version="1.0.7">-Fixed Error</release>
         <release date="2024-12-24" version="1.0.6">-Add FlexBtn Params and Temps</release>
         <release date="2024-12-24" version="1.0.5">-Fix FlexBtn define</release>
@@ -16,7 +19,6 @@
     </releases>
     <keywords>
         <keyword>CUBE_RULES_COMPLIANT</keyword>
-        <keyword>IMPLEMENTED_WITH_STM32CUBEMX</keyword>
     </keywords>
     <taxonomy>
         <description Cclass="Common">Common</description>
@@ -24,17 +26,17 @@
     </taxonomy>
     <conditions>
         <condition id="Condition Need Top Header">
-            <require Cclass="Common" Cgroup="Files"/>
+            <require Cclass="Common" Cgroup="Header"/>
         </condition>
     </conditions>
     <components>
-        <component Cclass="Common" Cgroup="Files" Cversion="1.0.3" maxInstances="1">
+        <component Cclass="Common" Cgroup="Header" Cversion="1.0.4" maxInstances="1">
             <description>Common header files</description>
             <files>
-                <file category="header" name="D:/ARK_SDK/Common/common_lib.h::Middlewares/Third_Party/Files/common_lib.h"/>
+                <file category="header" name="D:/ARK_SDK/Common/common_lib.h::Middlewares/Third_Party/Header/common_lib.h"/>
             </files>
         </component>
-        <bundle Cbundle="Files" Cclass="Driver" Cversion="1.0.7">
+        <bundle Cbundle="Files" Cclass="Driver" Cversion="1.1.0">
             <description>Bundle of drivers</description>
             <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
             <component Cgroup="Button" Cvariant="FlexBtn" condition="Condition Need Top Header" maxInstances="1">
