@@ -3,6 +3,15 @@
  * @Description  : Flexible button configuration
  * @Author       : Jason Chen
  * @Date         : 2024-12-24 17:20:02
+[#list SWIPdatas as SWIP]
+[#if SWIP.defines??]
+[#list SWIP.defines as definition]
+[#if definition.name == "FLEXBTN_VERSION"]
+ * @Version      : ${definition.value}
+[/#if]
+[/#list]
+[/#if]
+[/#list]
  * @FilePath     : flexbtn_conf.h
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
