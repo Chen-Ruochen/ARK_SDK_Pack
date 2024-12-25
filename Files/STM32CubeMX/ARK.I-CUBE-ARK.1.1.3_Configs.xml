@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<IP xmlns="http://mcd.rou.st.com/modules.php?name=mcu" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" DBVersion="V4.0" Name="I-CUBE-ARK" RootFolder="Packs/ARK/I-CUBE-ARK/1.1.3/" Version="1.1.3" ns0:schemaLocation="http://mcd.rou.st.com/modules.php?name=mcu ../../../../../../../doc/V4/Development/Specifications/db/thirdPartyDb.xsd">
+    <RefConfig Name="CommonJjHeader">
+        <Component Name="Common:Header:$CommonJjHeader"/>
+    </RefConfig>
+    <RefConfig Name="DriverJjFiles">
+        <Component Name="FilesCcDriver:Button:FlexBtn:$FilesCcDriverJjButton"/>
+        <ConfigFile Name="FLEXBTN_APP_H"/>
+        <ConfigFile Name="FLEXBTN_APP_C"/>
+        <ConfigFile Name="FLEXBTN_CONF_H"/>
+    </RefConfig>
+    <RefConfig Name="ModuleJjFiles">
+        <Component Name="FilesCcModule:CRC16:$FilesCcModuleJjCRC16"/>
+        <Component Name="FilesCcModule:QFsm:$FilesCcModuleJjQFsm"/>
+        <Component Name="FilesCcModule:RingFIFO:$FilesCcModuleJjRingFIFO"/>
+    </RefConfig>
+    <RefConfig Name="ProtocolJjFiles">
+        <Component Name="FilesCcProtocol:RCP:$FilesCcProtocolJjRCP"/>
+    </RefConfig>
+    <RefConfigFile Added="true" Description="FLEXBTN_APP_H" Name="FLEXBTN_APP_H" Template="appflexbtn_h.ftl">
+        <File Category="header" Condition="SEMFilesCcDriverJjButtonJjFlexBtn" Name="App/app_flexbtn.h"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Description="FLEXBTN_APP_C" Name="FLEXBTN_APP_C" Template="appflexbtn_c.ftl">
+        <File Category="source" Condition="SEMFilesCcDriverJjButtonJjFlexBtn" Name="App/app_flexbtn.c"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Description="FLEXBTN_CONF_H" Name="FLEXBTN_CONF_H" Template="flexbtnconf_h.ftl">
+        <File Category="header" Condition="SEMFilesCcDriverJjButtonJjFlexBtn" Name="App/flexbtn_conf.h"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_VERSION" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefComponent Cclass="Common" Cgroup="Header" Cversion="1Gg0Gg4">
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/Header/common_lib.h"/>
+    </RefComponent>
+    <RefComponent Cclass="FilesCcDriver" Cgroup="Button" Cversion="1Gg1Gg0">
+        <SubComponent Csub="" Cvariant="FlexBtn:FlexBtn">
+            <File Category="source" Condition="" Name="Middlewares/Third_Party/Button/flexible_button.c"/>
+            <File Category="header" Condition="" Name="Middlewares/Third_Party/Button/flexible_button.h"/>
+        </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="FilesCcModule" Cgroup="CRC16" Cversion="1Gg0Gg0">
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/CRC16/crc16_XMODEM.c"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/CRC16/crc16_XMODEM.h"/>
+    </RefComponent>
+    <RefComponent Cclass="FilesCcModule" Cgroup="QFsm" Cversion="1Gg0Gg0">
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/QFsm/QFsm.c"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/QFsm/QFsm.h"/>
+    </RefComponent>
+    <RefComponent Cclass="FilesCcModule" Cgroup="RingFIFO" Cversion="1Gg0Gg0">
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/RingFIFO/ring_fifo.c"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/RingFIFO/ring_fifo.h"/>
+    </RefComponent>
+    <RefComponent Cclass="FilesCcProtocol" Cgroup="RCP" Cversion="1Gg0Gg0">
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/RCP/protocol_rcp.c"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/RCP/protocol_rcp.h"/>
+    </RefComponent>
+</IP>

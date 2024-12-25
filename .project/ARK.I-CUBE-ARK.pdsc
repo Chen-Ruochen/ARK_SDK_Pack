@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-25" version="1.1.3">-Add FlexBtn templates</release>
         <release date="2024-12-25" version="1.1.2">-Add Protocol RCP</release>
         <release date="2024-12-25" version="1.1.1">-Add Module CRC
 -Add Module QFsm
@@ -23,6 +24,7 @@
     </releases>
     <keywords>
         <keyword>CUBE_RULES_COMPLIANT</keyword>
+        <keyword>IMPLEMENTED_WITH_STM32CUBEMX</keyword>
     </keywords>
     <taxonomy>
         <description Cclass="Protocol">Protocol</description>
