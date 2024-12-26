@@ -2,11 +2,11 @@
  * @Description  : 环形缓冲区头文件
  * @Author       : Jason Chen
  * @Date         : 2024-12-10 14:38:46
- * @FilePath     : ring_fifo.h
+ * @FilePath     : module_ring_fifo.h
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#ifndef __RING_FIFO_H
-#define __RING_FIFO_H
+#ifndef __MODULE_RING_FIFO_H
+#define __MODULE_RING_FIFO_H
 #include "common_lib.h"
 
 #ifdef __cplusplus
@@ -37,4 +37,4 @@ void ring_fifo_reset(ring_fifo_t *fifo);
 }
 #endif
 
-#endif /* __RING_FIFO_H */
+#endif /* __MODULE_RING_FIFO_H */

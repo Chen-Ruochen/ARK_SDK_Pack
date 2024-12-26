@@ -18,29 +18,17 @@ extern "C" {
 #endif
 
 /* RCP版本号 */
-#ifndef RCP_VERSION
 #define RCP_VERSION             (0)
-#endif
 /* RCP帧头 默认0x5A */
-#ifndef RCP_FRAME_STX
 #define RCP_FRAME_STX           (0x5A)
-#endif
 /* RCP发送缓冲大小 */
-#ifndef RCP_TX_FIFO_SIZE
 #define RCP_TX_FIFO_SIZE        (2048)
-#endif
 /* RCP接收缓冲大小 */
-#ifndef RCP_RX_FIFO_SIZE
 #define RCP_RX_FIFO_SIZE        (2048)
-#endif
 /* RCP单次发送大小 */
-#ifndef RCP_TX_MAX_SIZE
 #define RCP_TX_MAX_SIZE         (300)
-#endif
 /* RCP超时时间ms */
-#ifndef RCP_TIMEOUT
 #define RCP_TIMEOUT             (3000)
-#endif
 
 
 typedef enum rcp_err_e {

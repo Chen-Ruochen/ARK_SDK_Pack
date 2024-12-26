@@ -2,11 +2,11 @@
  * @Description  : ssd1306 driver header file
  * @Author       : Jason Chen
  * @Date         : 2024-12-17 09:01:01
- * @FilePath     : ssd1306.h
+ * @FilePath     : drv_ssd1306.h
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#ifndef __SSD1306_H
-#define __SSD1306_H
+#ifndef __DRV_SSD1306_H
+#define __DRV_SSD1306_H
 
 #include "common_lib.h"
 

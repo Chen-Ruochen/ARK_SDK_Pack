@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-26" version="1.1.9">-Update Driver file names</release>
         <release date="2024-12-26" version="1.1.8">-Add Driver SSD1306
 -Add FlexBtn example code</release>
         <release date="2024-12-26" version="1.1.7">-Fixed FlexBtn FTL blank problem</release>
@@ -62,17 +63,17 @@
             <component Cgroup="Button" Cvariant="FlexBtn" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of FlexBtn</description>
                 <files>
-                    <file category="source" name="D:/ARK_SDK/Driver/flex_button/flexible_button.c::Middlewares/Third_Party/Button/flexible_button.c"/>
-                    <file category="header" name="D:/ARK_SDK/Driver/flex_button/flexible_button.h::Middlewares/Third_Party/Button/flexible_button.h"/>
+                    <file category="source" name="D:/ARK_SDK/Driver/flex_button/drv_flexible_button.c::Middlewares/Third_Party/Button/drv_flexible_button.c"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/flex_button/drv_flexible_button.h::Middlewares/Third_Party/Button/drv_flexible_button.h"/>
                 </files>
             </component>
             <component Cgroup="Display" Cvariant="SSD1306" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of SSD1306</description>
                 <files>
-                    <file category="source" name="D:/ARK_SDK/Driver/ssd1306/ssd1306.c::Middlewares/Third_Party/Display/ssd1306.c"/>
-                    <file category="header" name="D:/ARK_SDK/Driver/ssd1306/ssd1306.h::Middlewares/Third_Party/Display/ssd1306.h"/>
-                    <file category="source" name="D:/ARK_SDK/Driver/ssd1306/ssd1306_ex.c::Middlewares/Third_Party/Display/ssd1306_ex.c"/>
-                    <file category="header" name="D:/ARK_SDK/Driver/ssd1306/ssd1306_ex.h::Middlewares/Third_Party/Display/ssd1306_ex.h"/>
+                    <file category="source" name="D:/ARK_SDK/Driver/ssd1306/drv_ssd1306.c::Middlewares/Third_Party/Display/drv_ssd1306.c"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/ssd1306/drv_ssd1306.h::Middlewares/Third_Party/Display/drv_ssd1306.h"/>
+                    <file category="source" name="D:/ARK_SDK/Driver/ssd1306/drv_ssd1306_ex.c::Middlewares/Third_Party/Display/drv_ssd1306_ex.c"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/ssd1306/drv_ssd1306_ex.h::Middlewares/Third_Party/Display/drv_ssd1306_ex.h"/>
                 </files>
             </component>
         </bundle>
@@ -82,22 +83,22 @@
             <component Cgroup="CRC16" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of CRC16</description>
                 <files>
-                    <file category="source" name="D:/ARK_SDK/Module/CRC/crc16_XMODEM.c::Middlewares/Third_Party/CRC16/crc16_XMODEM.c"/>
-                    <file category="header" name="D:/ARK_SDK/Module/CRC/crc16_XMODEM.h::Middlewares/Third_Party/CRC16/crc16_XMODEM.h"/>
+                    <file category="source" name="D:/ARK_SDK/Module/CRC/module_crc16_xmodem.c::Middlewares/Third_Party/CRC16/module_crc16_xmodem.c"/>
+                    <file category="header" name="D:/ARK_SDK/Module/CRC/module_crc16_xmodem.h::Middlewares/Third_Party/CRC16/module_crc16_xmodem.h"/>
                 </files>
             </component>
             <component Cgroup="QFsm" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of QFsm</description>
                 <files>
-                    <file category="source" name="D:/ARK_SDK/Module/QFsm/QFsm.c::Middlewares/Third_Party/QFsm/QFsm.c"/>
-                    <file category="header" name="D:/ARK_SDK/Module/QFsm/QFsm.h::Middlewares/Third_Party/QFsm/QFsm.h"/>
+                    <file category="source" name="D:/ARK_SDK/Module/QFsm/module_qfsm.c::Middlewares/Third_Party/QFsm/module_qfsm.c"/>
+                    <file category="header" name="D:/ARK_SDK/Module/QFsm/module_qfsm.h::Middlewares/Third_Party/QFsm/module_qfsm.h"/>
                 </files>
             </component>
             <component Cgroup="RingFIFO" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of RingFIFO</description>
                 <files>
-                    <file category="source" name="D:/ARK_SDK/Module/Ring_FIFO/ring_fifo.c::Middlewares/Third_Party/RingFIFO/ring_fifo.c"/>
-                    <file category="header" name="D:/ARK_SDK/Module/Ring_FIFO/ring_fifo.h::Middlewares/Third_Party/RingFIFO/ring_fifo.h"/>
+                    <file category="source" name="D:/ARK_SDK/Module/Ring_FIFO/module_ring_fifo.c::Middlewares/Third_Party/RingFIFO/module_ring_fifo.c"/>
+                    <file category="header" name="D:/ARK_SDK/Module/Ring_FIFO/module_ring_fifo.h::Middlewares/Third_Party/RingFIFO/module_ring_fifo.h"/>
                 </files>
             </component>
         </bundle>

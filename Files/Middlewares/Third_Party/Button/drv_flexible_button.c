@@ -2,11 +2,11 @@
  * @Description  : Flexible button driver
  * @Author       : Jason Chen
  * @Date         : 2024-12-24 09:06:16
- * @FilePath     : flexible_button.c
+ * @FilePath     : drv_flexible_button.c
  * @Version      : V1.0
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#include "flexible_button.h"
+#include "drv_flexible_button.h"
 
 #ifndef NULL
 #define NULL 0

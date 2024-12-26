@@ -2,10 +2,10 @@
  * @Description  : ssd1306 driver source file
  * @Author       : Jason Chen
  * @Date         : 2024-12-17 09:01:01
- * @FilePath     : ssd1306.c
+ * @FilePath     : drv_ssd1306.c
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#include "ssd1306.h"
+#include "drv_ssd1306.h"
 
 /**
  * @brief chip information definition

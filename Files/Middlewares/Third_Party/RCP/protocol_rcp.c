@@ -335,16 +335,16 @@ static QState rcp_state_get_stx(rcp_protocol_t *me, QEvent const *e)
             me->old_time = me->cur_time;
             return Q_HANDLED();
         case RCP_FIFO_PROCESS:
-            ring_fifo_get(&me->rx_fifo, &me->hdr.stx, sizeof(me->hdr.stx));
-            //判断首字节是否为STX
-            if (me->hdr.stx == RCP_FRAME_STX) {
-                me->total_len += sizeof(me->hdr.stx);
-                //正确 进入解析长度
-                return Q_TRAN(&rcp_state_get_len_flag_cmd);
-            } else {
-                //错误 保持当前
-                return Q_HANDLED();
+            while (ring_fifo_get(&me->rx_fifo, &me->hdr.stx, sizeof(me->hdr.stx)) == 1) {
+                //判断首字节是否为STX
+                if (me->hdr.stx == RCP_FRAME_STX) {
+                    me->total_len += sizeof(me->hdr.stx);
+                    //正确 进入解析长度
+                    return Q_TRAN(&rcp_state_get_len_flag_cmd);
+                }
             }
+            //错误 保持当前
+            return Q_HANDLED();
         case RCP_FIFO_WAIT:
             //当FIFO无数据且超时 状态机应进入休眠
             if (RCP_IS_TIMEOUT) {

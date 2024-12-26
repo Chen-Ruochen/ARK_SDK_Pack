@@ -2,14 +2,14 @@
  * @Description  : SSD1306驱动扩展头文件
  * @Author       : Jason Chen
  * @Date         : 2024-12-17 13:55:46
- * @FilePath     : ssd1306_ex.h
+ * @FilePath     : drv_ssd1306_ex.h
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#ifndef __SSD1306_ADVANCE_H
-#define __SSD1306_ADVANCE_H
+#ifndef __DRV_SSD1306_ADVANCE_H
+#define __DRV_SSD1306_ADVANCE_H
 
 #include "common_lib.h"
-#include "ssd1306.h"
+#include "drv_ssd1306.h"
 
 #ifdef __cplusplus
 extern "C"{

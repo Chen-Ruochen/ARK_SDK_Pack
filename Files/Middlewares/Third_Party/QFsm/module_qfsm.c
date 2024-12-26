@@ -2,10 +2,10 @@
  * @Description  : 有限状态机源文件
  * @Author       : Jason Chen
  * @Date         : 2024-12-11 10:21:59
- * @FilePath     : QFsm.c
+ * @FilePath     : module_qfsm.c
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#include "QFsm.h"
+#include "module_qfsm.h"
 
 QEvent const QEP_reservedEvt_[4] = {
     { (QSignal)QEP_EMPTY_SIG, (uint8_t)0 },

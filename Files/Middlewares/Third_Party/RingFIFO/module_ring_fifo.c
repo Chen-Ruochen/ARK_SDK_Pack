@@ -2,10 +2,10 @@
  * @Description  : 环形缓冲区源文件
  * @Author       : Jason Chen
  * @Date         : 2024-12-10 14:38:40
- * @FilePath     : ring_fifo.c
+ * @FilePath     : module_ring_fifo.c
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#include "ring_fifo.h"
+#include "module_ring_fifo.h"
 
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 
