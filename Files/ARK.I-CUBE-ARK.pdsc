@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-26" version="1.2.0">-Remove FlexBtn config FTL</release>
         <release date="2024-12-26" version="1.1.9">-Update Driver file names</release>
         <release date="2024-12-26" version="1.1.8">-Add Driver SSD1306
 -Add FlexBtn example code</release>

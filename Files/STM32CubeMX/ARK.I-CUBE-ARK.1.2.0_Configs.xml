@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<IP xmlns="http://mcd.rou.st.com/modules.php?name=mcu" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" DBVersion="V4.0" Name="I-CUBE-ARK" RootFolder="Packs/ARK/I-CUBE-ARK/1.1.9/" Version="1.1.9" ns0:schemaLocation="http://mcd.rou.st.com/modules.php?name=mcu ../../../../../../../doc/V4/Development/Specifications/db/thirdPartyDb.xsd">
+<IP xmlns="http://mcd.rou.st.com/modules.php?name=mcu" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" DBVersion="V4.0" Name="I-CUBE-ARK" RootFolder="Packs/ARK/I-CUBE-ARK/1.2.0/" Version="1.2.0" ns0:schemaLocation="http://mcd.rou.st.com/modules.php?name=mcu ../../../../../../../doc/V4/Development/Specifications/db/thirdPartyDb.xsd">
     <RefConfig Name="CommonJjHeader">
         <Component Name="Common:Header:$CommonJjHeader"/>
     </RefConfig>
@@ -8,7 +8,6 @@
         <Component Name="FilesCcDriver:Display:SSD1306:$FilesCcDriverJjDisplay"/>
         <ConfigFile Name="FLEXBTN_APP_H"/>
         <ConfigFile Name="FLEXBTN_APP_C"/>
-        <ConfigFile Name="FLEXBTN_CONF_H"/>
         <ConfigFile Name="SSD1306_IF_H"/>
         <ConfigFile Name="SSD1306_IF_C"/>
     </RefConfig>
@@ -21,36 +20,31 @@
         <Component Name="FilesCcProtocol:RCP:$FilesCcProtocolJjRCP"/>
     </RefConfig>
     <RefConfigFile Added="true" Description="FLEXBTN_APP_H" Name="FLEXBTN_APP_H" Template="appflexbtn_h.ftl">
-        <File Category="header" Condition="FlexBtn_Enabled::SEMFilesCcDriverJjButtonJjFlexBtn" Name="App/app_flexbtn.h"/>
-        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_NUM" OptimizationCondition="equal"/>
+        <File Category="header" Condition="SEMFilesCcDriverJjButtonJjFlexBtn" Name="App/app_flexbtn.h"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_LPT" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_SPT" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_LHT" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_NAME5" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_NAME4" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_NAME3" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_SCAN_FREQ" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_NAME2" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_VERSION" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_NAME1" OptimizationCondition="equal"/>
-    </RefConfigFile>
-    <RefConfigFile Added="true" Description="FLEXBTN_APP_C" Name="FLEXBTN_APP_C" Template="appflexbtn_c.ftl">
-        <File Category="source" Condition="FlexBtn_Enabled::SEMFilesCcDriverJjButtonJjFlexBtn" Name="App/app_flexbtn.c"/>
-        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_VERSION" OptimizationCondition="equal"/>
-    </RefConfigFile>
-    <RefConfigFile Added="true" Description="FLEXBTN_CONF_H" Name="FLEXBTN_CONF_H" Template="flexbtnconf_h.ftl">
-        <File Category="header" Condition="FlexBtn_Enabled::SEMFilesCcDriverJjButtonJjFlexBtn" Name="App/flexbtn_conf.h"/>
-        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_LPT" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_NUM" OptimizationCondition="equal"/>
-        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_SPT" OptimizationCondition="equal"/>
-        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_LHT" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_LPL" OptimizationCondition="equal"/>
-        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_SCAN_FREQ" OptimizationCondition="equal"/>
-        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_VERSION" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_CLICKINTERVAL" OptimizationCondition="equal"/>
     </RefConfigFile>
+    <RefConfigFile Added="true" Description="FLEXBTN_APP_C" Name="FLEXBTN_APP_C" Template="appflexbtn_c.ftl">
+        <File Category="source" Condition="SEMFilesCcDriverJjButtonJjFlexBtn" Name="App/app_flexbtn.c"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_VERSION" OptimizationCondition="equal"/>
+    </RefConfigFile>
     <RefConfigFile Added="true" Description="SSD1306_IF_H" Name="SSD1306_IF_H" Template="ssd1306if_h.ftl">
-        <File Category="header" Condition="SSD1306_Enabled::SEMFilesCcDriverJjDisplayJjSSD1306" Name="Target/ssd1306_if.h"/>
+        <File Category="header" Condition="SEMFilesCcDriverJjDisplayJjSSD1306" Name="Target/ssd1306_if.h"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="SSD1306_IF_C" Name="SSD1306_IF_C" Template="ssd1306if_c.ftl">
-        <File Category="source" Condition="SSD1306_Enabled::SEMFilesCcDriverJjDisplayJjSSD1306" Name="Target/ssd1306_if.c"/>
+        <File Category="source" Condition="SEMFilesCcDriverJjDisplayJjSSD1306" Name="Target/ssd1306_if.c"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefComponent Cclass="Common" Cgroup="Header" Cversion="1Gg0Gg4">

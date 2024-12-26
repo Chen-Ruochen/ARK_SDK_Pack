@@ -19,7 +19,6 @@
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
 #include "app_flexbtn.h"
-#include "flexbtn_conf.h"
 #include "drv_flexible_button.h"
 /* USER CODE BEGIN Include */
 
