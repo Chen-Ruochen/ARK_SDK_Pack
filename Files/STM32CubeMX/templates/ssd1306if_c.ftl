@@ -1,11 +1,13 @@
 [#ftl]
 [#assign valVersion = "1.0.0"]
+[#assign valInterface = "SSD1306_INTERFACE_IIC"]
 [#-- SWIPdatas is a list of SWIPconfigModel --]
 [#list SWIPdatas as SWIP]
 [#if SWIP.defines??]
 [#list SWIP.defines as definition]
 [#compress]
 [#if definition.name == "SSD1306_VERSION"] [#assign valVersion = definition.value] [/#if]
+[#if definition.name == "SSD1306_INTERFACE"] [#assign valInterface = definition.value] [/#if]
 [/#compress]
 [/#list]
 [/#if]
@@ -27,6 +29,7 @@
 
 /* USER CODE END 0 */
 
+[#if valInterface?contains("IIC")]
 /**
  * @brief  interface iic bus init
  * @return status code
@@ -75,6 +78,7 @@ uint8_t ssd1306_interface_iic_write(uint8_t addr, uint8_t reg, uint8_t *buf, uin
     return 0;
     /* USER CODE END 0 */
 }
+[#else]
 
 /**
  * @brief  interface spi bus init
@@ -124,18 +128,6 @@ uint8_t ssd1306_interface_spi_write_cmd(uint8_t *buf, uint16_t len)
 }
 
 /**
- * @brief     interface delay ms
- * @param[in] ms
- * @note      none
- */
-void ssd1306_interface_delay_ms(uint32_t ms)
-{
-    /* USER CODE BEGIN 0 */
-#warning "Please implement ssd1306_interface_delay_ms() for your application"
-    /* USER CODE END 0 */
-}
-
-/**
  * @brief  interface command && data gpio init
  * @return status code
  *         - 0 success
@@ -178,6 +170,19 @@ uint8_t ssd1306_interface_spi_cmd_data_gpio_write(uint8_t value)
     /* USER CODE BEGIN 0 */
 #warning "Please implement ssd1306_interface_spi_cmd_data_gpio_write() for your application"
     return 0;
+    /* USER CODE END 0 */
+}
+[/#if]
+
+/**
+ * @brief     interface delay ms
+ * @param[in] ms
+ * @note      none
+ */
+void ssd1306_interface_delay_ms(uint32_t ms)
+{
+    /* USER CODE BEGIN 0 */
+#warning "Please implement ssd1306_interface_delay_ms() for your application"
     /* USER CODE END 0 */
 }
 
