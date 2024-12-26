@@ -20,7 +20,7 @@
  **********************************/
 #include "app_flexbtn.h"
 #include "flexbtn_conf.h"
-#include "flexible_button.h"
+#include "drv_flexible_button.h"
 /* USER CODE BEGIN Include */
 
 /* USER CODE END Include */
