@@ -5,6 +5,8 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-26" version="1.1.8">-Add Driver SSD1306
+-Add FlexBtn example code</release>
         <release date="2024-12-26" version="1.1.7">-Fixed FlexBtn FTL blank problem</release>
         <release date="2024-12-26" version="1.1.6">-Add FlexBtn application</release>
         <release date="2024-12-25" version="1.1.5">-Add FlexBtn Params</release>
@@ -62,6 +64,15 @@
                 <files>
                     <file category="source" name="D:/ARK_SDK/Driver/flex_button/flexible_button.c::Middlewares/Third_Party/Button/flexible_button.c"/>
                     <file category="header" name="D:/ARK_SDK/Driver/flex_button/flexible_button.h::Middlewares/Third_Party/Button/flexible_button.h"/>
+                </files>
+            </component>
+            <component Cgroup="Display" Cvariant="SSD1306" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of SSD1306</description>
+                <files>
+                    <file category="source" name="D:/ARK_SDK/Driver/ssd1306/ssd1306.c::Middlewares/Third_Party/Display/ssd1306.c"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/ssd1306/ssd1306.h::Middlewares/Third_Party/Display/ssd1306.h"/>
+                    <file category="source" name="D:/ARK_SDK/Driver/ssd1306/ssd1306_ex.c::Middlewares/Third_Party/Display/ssd1306_ex.c"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/ssd1306/ssd1306_ex.h::Middlewares/Third_Party/Display/ssd1306_ex.h"/>
                 </files>
             </component>
         </bundle>

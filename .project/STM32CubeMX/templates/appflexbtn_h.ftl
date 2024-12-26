@@ -57,8 +57,6 @@ typedef enum user_btn_e
     USER_BUTTON_MAX
 } user_btn_t;
 
-__weak uint8_t I_CUBE_FlexBtn_Read(void *arg);
-__weak void I_CUBE_FlexBtn_Evt(void *arg);
 void I_CUBE_FlexBtn_Init(void);
 void I_CUBE_FlexBtn_Scan(void *arg);
 
