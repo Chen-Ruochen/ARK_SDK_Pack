@@ -5,6 +5,8 @@
 [#assign valBtnLPT = 3000]
 [#assign valBtnLHT = 4500]
 [#assign valBtnNum = 1]
+[#assign valBtnSFreq = 50]
+[#assign valBtnMClickInter = 300]
 [#-- SWIPdatas is a list of SWIPconfigModel --]
 [#list SWIPdatas as SWIP]
 [#if SWIP.defines??]
@@ -15,6 +17,8 @@
 [#if definition.name == "FLEXBTN_CONF_LPT"] [#assign valBtnLPT = definition.value] [/#if]
 [#if definition.name == "FLEXBTN_CONF_LHT"] [#assign valBtnLHT = definition.value] [/#if]
 [#if definition.name == "FLEXBTN_CONF_NUM"] [#assign valBtnNum = definition.value] [/#if]
+[#if definition.name == "FLEXBTN_CONF_SCAN_FREQ"] [#assign valBtnSFreq = definition.value] [/#if]
+[#if definition.name == "FLEXBTN_CONF_CLICKINTERVAL"] [#assign valBtnMClickInter = definition.value] [/#if]
 [/#list]
 [/#if]
 [/#list]
@@ -31,11 +35,18 @@
 
 #include "common_lib.h"
 
-#define FLEXBTN_CONF_NUM    (${valBtnNum})
-#define FLEXBTN_CONF_SPT    (${valBtnSPT})
-#define FLEXBTN_CONF_LPT    (${valBtnLPT})
-#define FLEXBTN_CONF_LHT    (${valBtnLHT})
-#define FLEXBTN_CONF_LPL    (${valBtnLPL})
+#define FLEXBTN_CONF_NUM            (${valBtnNum})
+#define FLEXBTN_CONF_SPT            (${valBtnSPT})
+#define FLEXBTN_CONF_LPT            (${valBtnLPT})
+#define FLEXBTN_CONF_LHT            (${valBtnLHT})
+#define FLEXBTN_CONF_LPL            (${valBtnLPL})
+#define FLEXBTN_CONF_SCAN_FREQ      (${valBtnSFreq})
+#define FLEXBTN_CONF_CLICKINTERVAL  (${valBtnMClickInter})
+
+#define FLEX_MS_TO_SCAN_CNT(ms) (ms / (1000 / FLEXBTN_CONF_SCAN_FREQ))
+
+/* Multiple clicks interval, default 300ms */
+#define MAX_MULTIPLE_CLICKS_INTERVAL (FLEX_MS_TO_SCAN_CNT(FLEXBTN_CONF_CLICKINTERVAL))
 
 #ifdef __cplusplus
 extern "C" {
