@@ -21,7 +21,7 @@
 #ifndef __SSD1306_IF_H
 #define __SSD1306_IF_H
 
-#include "ssd1306.h"
+#include "common_lib.h"
 
 #ifdef __cplusplus
 extern "C"{
