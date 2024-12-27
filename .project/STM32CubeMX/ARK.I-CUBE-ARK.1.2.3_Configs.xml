@@ -86,6 +86,11 @@
         <File Category="header" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_def.h"/>
         <File Category="header" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_flash_def.h"/>
         <File Category="source" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_sfdp.c"/>
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/SFUD/sfud.c"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/SFUD/sfud.h"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_def.h"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_flash_def.h"/>
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_sfdp.c"/>
     </RefComponent>
     <RefComponent Cclass="FilesCcModule" Cgroup="CRC16" Cversion="1Gg0Gg0">
         <File Category="source" Condition="" Name="Middlewares/Third_Party/CRC16/module_crc16_xmodem.c"/>

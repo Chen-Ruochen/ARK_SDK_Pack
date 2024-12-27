@@ -88,6 +88,11 @@
                     <file category="header" name="Middlewares/Third_Party/SFUD/sfud_def.h"/>
                     <file category="header" name="Middlewares/Third_Party/SFUD/sfud_flash_def.h"/>
                     <file category="source" name="Middlewares/Third_Party/SFUD/sfud_sfdp.c"/>
+                    <file category="source" name="Middlewares/Third_Party/SFUD/sfud.c"/>
+                    <file category="header" name="Middlewares/Third_Party/SFUD/sfud.h"/>
+                    <file category="header" name="Middlewares/Third_Party/SFUD/sfud_def.h"/>
+                    <file category="header" name="Middlewares/Third_Party/SFUD/sfud_flash_def.h"/>
+                    <file category="source" name="Middlewares/Third_Party/SFUD/sfud_sfdp.c"/>
                 </files>
             </component>
         </bundle>
