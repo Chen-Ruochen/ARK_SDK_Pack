@@ -76,7 +76,7 @@ static void make_address_byte_array(const sfud_flash *flash, uint32_t addr, uint
 /* ../port/sfup_port.c */
 __weak sfud_err sfud_spi_port_init(sfud_flash * flash)
 {
-
+    return SFUD_SUCCESS;
 }
 __weak void sfud_log_debug(const char *file, const long line, const char *format, ...)
 {

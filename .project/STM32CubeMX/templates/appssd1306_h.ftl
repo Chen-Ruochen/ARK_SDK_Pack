@@ -26,9 +26,9 @@
 #define __APP_SSD1306_H
 
 #include "common_lib.h"
-/* USER CODE BEGIN Include */
+/* USER CODE BEGIN Includes */
 
-/* USER CODE END Include */
+/* USER CODE END Includes */
 
 #ifdef __cplusplus
 extern "C"{
@@ -45,12 +45,12 @@ extern "C"{
 
 void I_CUBE_SSD1306_Init(void);
 
-#ifdef __cplusplus
-}
-#endif
-
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

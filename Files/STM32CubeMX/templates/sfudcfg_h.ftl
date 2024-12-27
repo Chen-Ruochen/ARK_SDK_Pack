@@ -32,9 +32,9 @@
  **********************************/
 #ifndef __SFUD_CFG_H
 #define __SFUD_CFG_H
-/* USER CODE BEGIN Include */
+/* USER CODE BEGIN Includes */
 
-/* USER CODE END Include */
+/* USER CODE END Includes */
 
 /* USER CODE BEGIN 0 */
 

@@ -46,9 +46,9 @@
 #define __APP_FLEXBTN_H
 
 #include "common_lib.h"
-/* USER CODE BEGIN Include */
+/* USER CODE BEGIN Includes */
 
-/* USER CODE END Include */
+/* USER CODE END Includes */
 
 #ifdef __cplusplus
 extern "C" {

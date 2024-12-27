@@ -25,9 +25,9 @@
 #define SSD1306_ADDR         SSD1306_ADDR_SA0_1
 #endif
 
-/* USER CODE BEGIN Include */
+/* USER CODE BEGIN Includes */
 
-/* USER CODE END Include */
+/* USER CODE END Includes */
 
 /* USER CODE BEGIN 0 */
 

@@ -14,6 +14,7 @@
 #include "stdbool.h"
 #include "stdint.h"
 #include "stddef.h"
+#include "stdarg.h"
 
 #if defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050) /* ARM Compiler V6 */
 #ifndef __weak

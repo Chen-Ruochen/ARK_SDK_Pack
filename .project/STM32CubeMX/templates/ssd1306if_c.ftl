@@ -21,9 +21,9 @@
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
 #include "ssd1306_if.h"
-/* USER CODE BEGIN Include */
+/* USER CODE BEGIN Includes */
 
-/* USER CODE END Include */
+/* USER CODE END Includes */
 
 /* USER CODE BEGIN 0 */
 

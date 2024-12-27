@@ -20,9 +20,9 @@
  **********************************/
 #include "app_flexbtn.h"
 #include "drv_flexible_button.h"
-/* USER CODE BEGIN Include */
+/* USER CODE BEGIN Includes */
 
-/* USER CODE END Include */
+/* USER CODE END Includes */
 
 static flex_button_t user_button[USER_BUTTON_MAX];
 
@@ -33,23 +33,23 @@ static flex_button_t user_button[USER_BUTTON_MAX];
 static uint8_t I_CUBE_FlexBtn_Read(void *arg)
 {
     flex_button_t *btn = (flex_button_t *)arg;
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN I_CUBE_FlexBtn_Read */
 #warning "Please implement I_CUBE_FlexBtn_Read() for your application"
     switch (btn->id) {
         default:
             break;
     }
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END I_CUBE_FlexBtn_Read */
 }
 
 
 static void I_CUBE_FlexBtn_Evt(void *arg)
 {
     flex_button_t *btn = (flex_button_t *)arg;
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN I_CUBE_FlexBtn_Evt */
 #warning "Please implement I_CUBE_FlexBtn_Evt() for your application"
-    /* USER CODE END 0 */
+    /* USER CODE END I_CUBE_FlexBtn_Evt */
 }
 
 void I_CUBE_FlexBtn_Init(void)

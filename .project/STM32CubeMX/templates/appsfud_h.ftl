@@ -18,9 +18,10 @@
  * @Version      : ${valVersion}
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-/* USER CODE BEGIN Include */
+#include "sfud.h"
+/* USER CODE BEGIN Includes */
 
-/* USER CODE END Include */
+/* USER CODE END Includes */
 
 /* USER CODE BEGIN 0 */
 

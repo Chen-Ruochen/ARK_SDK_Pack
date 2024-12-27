@@ -44,10 +44,10 @@
  * @Version      : ${valVersion}
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
- #include "sfud.h"
-/* USER CODE BEGIN Include */
+#include "app_sfud.h"
+/* USER CODE BEGIN Includes */
 
-/* USER CODE END Include */
+/* USER CODE END Includes */
 
 /* USER CODE BEGIN 0 */
 
@@ -63,22 +63,22 @@ sfud_flash sfud_${valFlashName} = {
 
 void I_CUBE_SFUD_Init(void)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN I_CUBE_SFUD_Init 0 */
 
-    /* USER CODE END 0 */
+    /* USER CODE END I_CUBE_SFUD_Init 0 */
 [#if valCustomTable?number == 1]
     if (sfud_device_init(&sfud_${valFlashName}) == SFUD_SUCCESS) {
         [#if valFastRead?number == 1]
         /* enable qspi fast read mode, set four data lines width */
         sfud_qspi_fast_read_enable(sfud_get_device(SFUD_${valFlashName}_DEVICE_INDEX), ${valDataLineWidth});
         [/#if]
-        /* USER CODE BEGIN 1 */
+        /* USER CODE BEGIN I_CUBE_SFUD_Init 1 */
 
-        /* USER CODE END 1 */
+        /* USER CODE END I_CUBE_SFUD_Init 1 */
     } else {
-        /* USER CODE BEGIN 2 */
+        /* USER CODE BEGIN I_CUBE_SFUD_Init 2 */
 
-        /* USER CODE END 2 */
+        /* USER CODE END I_CUBE_SFUD_Init 2 */
     }
 [#else]
     if (sfud_init() == SFUD_SUCCESS) {
@@ -86,16 +86,20 @@ void I_CUBE_SFUD_Init(void)
         /* enable qspi fast read mode, set four data lines width */
         sfud_qspi_fast_read_enable(sfud_get_device(SFUD_${valFlashName}_DEVICE_INDEX), ${valDataLineWidth});
         [/#if]
-        /* USER CODE BEGIN 1 */
+        /* USER CODE BEGIN I_CUBE_SFUD_Init 1 */
 
-        /* USER CODE END 1 */
+        /* USER CODE END I_CUBE_SFUD_Init 1 */
     } else {
-        /* USER CODE BEGIN 2 */
+        /* USER CODE BEGIN I_CUBE_SFUD_Init 2 */
 
-        /* USER CODE END 2 */
+        /* USER CODE END I_CUBE_SFUD_Init 2 */
     }
 [/#if]
-    /* USER CODE BEGIN 3 */
+    /* USER CODE BEGIN I_CUBE_SFUD_Init 3 */
 
-    /* USER CODE END 3 */
+    /* USER CODE END I_CUBE_SFUD_Init 3 */
 }
+
+/* USER CODE BEGIN 1 */
+
+/* USER CODE END 1 */
