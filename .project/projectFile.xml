@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-27" version="1.2.4">-Change target folder</release>
         <release date="2024-12-27" version="1.2.3">-Add Moudle SFUD</release>
         <release date="2024-12-27" version="1.2.2">-Add Module cJSON</release>
         <release date="2024-12-26" version="1.2.1">-Add SSD1306 application FTL</release>
