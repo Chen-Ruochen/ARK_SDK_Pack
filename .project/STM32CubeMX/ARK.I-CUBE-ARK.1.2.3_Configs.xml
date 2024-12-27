@@ -13,6 +13,10 @@
         <ConfigFile Name="SSD1306_IF_C"/>
         <ConfigFile Name="SSD1306_APP_H"/>
         <ConfigFile Name="SSD1306_APP_C"/>
+        <ConfigFile Name="SFUD_CFG_H"/>
+        <ConfigFile Name="SFUD_IF_C"/>
+        <ConfigFile Name="SFUD_APP_H"/>
+        <ConfigFile Name="SFUD_APP_C"/>
     </RefConfig>
     <RefConfig Name="ModuleJjFiles">
         <Component Name="FilesCcModule:CRC16:$FilesCcModuleJjCRC16"/>
@@ -62,6 +66,41 @@
     <RefConfigFile Added="true" Description="SSD1306_APP_C" Name="SSD1306_APP_C" Template="appssd1306_c.ftl">
         <File Category="source" Condition="SSD1306_Enabled::SEMFilesCcDriverJjDisplayJjSSD1306" Name="App/app_ssd1306.c"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_VERSION" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Description="SFUD_CFG_H" Name="SFUD_CFG_H" Template="sfudcfg_h.ftl" destinationFolder="/SFUD/Interface">
+        <File Category="header" Condition="SFUD_Enabled::SEMFilesCcDriverJjSFUD" Name="./sfud_cfg.h"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_FLASHNAME" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_CUSTOMTABLE" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_SPINAME" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_VERSION" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_FASTREAD" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_DEBUG_MODE" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_CUSTOMNAME" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Description="SFUD_IF_C" Name="SFUD_IF_C" Template="sfudif_c.ftl" destinationFolder="/SFUD/Interface">
+        <File Category="source" Condition="SFUD_Enabled::SEMFilesCcDriverJjSFUD" Name="./sfud_if.c"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_VERSION" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Description="SFUD_APP_H" Name="SFUD_APP_H" Template="appsfud_h.ftl" destinationFolder="/SFUD/App">
+        <File Category="header" Condition="SFUD_Enabled::SEMFilesCcDriverJjSFUD" Name="./app_sfud.h"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_VERSION" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Description="SFUD_APP_C" Name="SFUD_APP_C" Template="appsfud_c.ftl" destinationFolder="/SFUD/App">
+        <File Category="source" Condition="SFUD_Enabled::SEMFilesCcDriverJjSFUD" Name="./app_sfud.c"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_ERASECMD" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_FLASHNAME" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_TYPEID" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_CUSTOMTABLE" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_CAPACITY" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_SPINAME" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_CAPID" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_WRITEMODE" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_MFID" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_ERASEGRAN" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_VERSION" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_FASTREAD" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_DATALINEWIDTH" OptimizationCondition="equal"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_CUSTOMNAME" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefComponent Cclass="Common" Cgroup="Header" Cversion="1Gg0Gg4">
         <File Category="header" Condition="" Name="Middlewares/Third_Party/Header/common_lib.h"/>
