@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<IP xmlns="http://mcd.rou.st.com/modules.php?name=mcu" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" DBVersion="V4.0" Name="I-CUBE-ARK" RootFolder="Packs/ARK/I-CUBE-ARK/1.2.2/" Version="1.2.2" ns0:schemaLocation="http://mcd.rou.st.com/modules.php?name=mcu ../../../../../../../doc/V4/Development/Specifications/db/thirdPartyDb.xsd">
+<IP xmlns="http://mcd.rou.st.com/modules.php?name=mcu" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" DBVersion="V4.0" Name="I-CUBE-ARK" RootFolder="Packs/ARK/I-CUBE-ARK/1.2.3/" Version="1.2.3" ns0:schemaLocation="http://mcd.rou.st.com/modules.php?name=mcu ../../../../../../../doc/V4/Development/Specifications/db/thirdPartyDb.xsd">
     <RefConfig Name="CommonJjHeader">
         <Component Name="Common:Header:$CommonJjHeader"/>
     </RefConfig>
     <RefConfig Name="DriverJjFiles">
         <Component Name="FilesCcDriver:Button:FlexBtn:$FilesCcDriverJjButton"/>
         <Component Name="FilesCcDriver:Display:SSD1306:$FilesCcDriverJjDisplay"/>
+        <Component Name="FilesCcDriver:SFUD:$FilesCcDriverJjSFUD"/>
         <ConfigFile Name="FLEXBTN_APP_H"/>
         <ConfigFile Name="FLEXBTN_APP_C"/>
         <ConfigFile Name="SSD1306_IF_H"/>
@@ -78,6 +79,13 @@
             <File Category="source" Condition="" Name="Middlewares/Third_Party/Display/drv_ssd1306_ex.c"/>
             <File Category="header" Condition="" Name="Middlewares/Third_Party/Display/drv_ssd1306_ex.h"/>
         </SubComponent>
+    </RefComponent>
+    <RefComponent Cclass="FilesCcDriver" Cgroup="SFUD" Cversion="1Gg1Gg0">
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/SFUD/sfud.c"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/SFUD/sfud.h"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_def.h"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_flash_def.h"/>
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_sfdp.c"/>
     </RefComponent>
     <RefComponent Cclass="FilesCcModule" Cgroup="CRC16" Cversion="1Gg0Gg0">
         <File Category="source" Condition="" Name="Middlewares/Third_Party/CRC16/module_crc16_xmodem.c"/>

@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-27" version="1.2.3">-Add Moudle SFUD</release>
         <release date="2024-12-27" version="1.2.2">-Add Module cJSON</release>
         <release date="2024-12-26" version="1.2.1">-Add SSD1306 application FTL</release>
         <release date="2024-12-26" version="1.2.0">-Remove FlexBtn config FTL</release>
@@ -77,6 +78,16 @@
                     <file category="header" name="D:/ARK_SDK/Driver/ssd1306/drv_ssd1306.h::Middlewares/Third_Party/Display/drv_ssd1306.h"/>
                     <file category="source" name="D:/ARK_SDK/Driver/ssd1306/drv_ssd1306_ex.c::Middlewares/Third_Party/Display/drv_ssd1306_ex.c"/>
                     <file category="header" name="D:/ARK_SDK/Driver/ssd1306/drv_ssd1306_ex.h::Middlewares/Third_Party/Display/drv_ssd1306_ex.h"/>
+                </files>
+            </component>
+            <component Cgroup="SFUD" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of SFUD</description>
+                <files>
+                    <file category="source" name="D:/ARK_SDK/Driver/sfud/sfud.c::Middlewares/Third_Party/SFUD/sfud.c"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/sfud/sfud.h::Middlewares/Third_Party/SFUD/sfud.h"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/sfud/sfud_def.h::Middlewares/Third_Party/SFUD/sfud_def.h"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/sfud/sfud_flash_def.h::Middlewares/Third_Party/SFUD/sfud_flash_def.h"/>
+                    <file category="source" name="D:/ARK_SDK/Driver/sfud/sfud_sfdp.c::Middlewares/Third_Party/SFUD/sfud_sfdp.c"/>
                 </files>
             </component>
         </bundle>
