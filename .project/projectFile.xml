@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-27" version="1.2.2">-Add Module cJSON</release>
         <release date="2024-12-26" version="1.2.1">-Add SSD1306 application FTL</release>
         <release date="2024-12-26" version="1.2.0">-Remove FlexBtn config FTL</release>
         <release date="2024-12-26" version="1.1.9">-Update Driver file names</release>
@@ -101,6 +102,13 @@
                 <files>
                     <file category="source" name="D:/ARK_SDK/Module/Ring_FIFO/module_ring_fifo.c::Middlewares/Third_Party/RingFIFO/module_ring_fifo.c"/>
                     <file category="header" name="D:/ARK_SDK/Module/Ring_FIFO/module_ring_fifo.h::Middlewares/Third_Party/RingFIFO/module_ring_fifo.h"/>
+                </files>
+            </component>
+            <component Cgroup="cJSON" maxInstances="1">
+                <description>Component of cJSON</description>
+                <files>
+                    <file category="source" name="D:/ARK_SDK/Module/cJSON/cJSON.c::Middlewares/Third_Party/cJSON/cJSON.c"/>
+                    <file category="header" name="D:/ARK_SDK/Module/cJSON/cJSON.h::Middlewares/Third_Party/cJSON/cJSON.h"/>
                 </files>
             </component>
         </bundle>
