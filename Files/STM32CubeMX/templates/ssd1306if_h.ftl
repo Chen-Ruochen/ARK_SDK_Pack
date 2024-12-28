@@ -24,10 +24,17 @@
 #define __SSD1306_IF_H
 
 #include "common_lib.h"
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
 
 #ifdef __cplusplus
 extern "C"{
 #endif
+
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
 
 /**
  * @defgroup ssd1306_interface_driver ssd1306 interface driver function
@@ -161,9 +168,9 @@ uint8_t ssd1306_interface_reset_gpio_deinit(void);
  */
 uint8_t ssd1306_interface_reset_gpio_write(uint8_t value);
 
-/**
- * @}
- */
+/* USER CODE BEGIN 1 */
+
+/* USER CODE END 1 */
 
 #ifdef __cplusplus
 }

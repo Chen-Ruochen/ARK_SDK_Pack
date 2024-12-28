@@ -39,10 +39,10 @@
  */
 uint8_t ssd1306_interface_iic_init(void)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_iic_init */
 #warning "Please implement ssd1306_interface_iic_init() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_iic_init */
 }
 
 /**
@@ -54,10 +54,10 @@ uint8_t ssd1306_interface_iic_init(void)
  */
 uint8_t ssd1306_interface_iic_deinit(void)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_iic_deinit */
 #warning "Please implement ssd1306_interface_iic_deinit() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_iic_deinit */
 }
 
 /**
@@ -73,10 +73,10 @@ uint8_t ssd1306_interface_iic_deinit(void)
  */
 uint8_t ssd1306_interface_iic_write(uint8_t addr, uint8_t reg, uint8_t *buf, uint16_t len)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_iic_write */
 #warning "Please implement ssd1306_interface_iic_write() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_iic_write */
 }
 [#else]
 
@@ -89,10 +89,10 @@ uint8_t ssd1306_interface_iic_write(uint8_t addr, uint8_t reg, uint8_t *buf, uin
  */
 uint8_t ssd1306_interface_spi_init(void)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_spi_init */
 #warning "Please implement ssd1306_interface_spi_init() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_spi_init */
 }
 
 /**
@@ -104,10 +104,10 @@ uint8_t ssd1306_interface_spi_init(void)
  */
 uint8_t ssd1306_interface_spi_deinit(void)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_spi_deinit */
 #warning "Please implement ssd1306_interface_spi_deinit() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_spi_deinit */
 }
 
 /**
@@ -121,10 +121,10 @@ uint8_t ssd1306_interface_spi_deinit(void)
  */
 uint8_t ssd1306_interface_spi_write_cmd(uint8_t *buf, uint16_t len)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_spi_write_cmd */
 #warning "Please implement ssd1306_interface_spi_write_cmd() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_spi_write_cmd */
 }
 
 /**
@@ -136,10 +136,10 @@ uint8_t ssd1306_interface_spi_write_cmd(uint8_t *buf, uint16_t len)
  */
 uint8_t ssd1306_interface_spi_cmd_data_gpio_init(void)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_spi_cmd_data_gpio_init */
 #warning "Please implement ssd1306_interface_spi_cmd_data_gpio_init() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_spi_cmd_data_gpio_init */
 }
 
 /**
@@ -151,10 +151,10 @@ uint8_t ssd1306_interface_spi_cmd_data_gpio_init(void)
  */
 uint8_t ssd1306_interface_spi_cmd_data_gpio_deinit(void)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_spi_cmd_data_gpio_deinit */
 #warning "Please implement ssd1306_interface_spi_cmd_data_gpio_deinit() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_spi_cmd_data_gpio_deinit */
 }
 
 /**
@@ -167,10 +167,10 @@ uint8_t ssd1306_interface_spi_cmd_data_gpio_deinit(void)
  */
 uint8_t ssd1306_interface_spi_cmd_data_gpio_write(uint8_t value)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_spi_cmd_data_gpio_write */
 #warning "Please implement ssd1306_interface_spi_cmd_data_gpio_write() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_spi_cmd_data_gpio_write */
 }
 [/#if]
 
@@ -181,9 +181,9 @@ uint8_t ssd1306_interface_spi_cmd_data_gpio_write(uint8_t value)
  */
 void ssd1306_interface_delay_ms(uint32_t ms)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_delay_ms */
 #warning "Please implement ssd1306_interface_delay_ms() for your application"
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_delay_ms */
 }
 
 /**
@@ -195,10 +195,10 @@ void ssd1306_interface_delay_ms(uint32_t ms)
  */
 uint8_t ssd1306_interface_reset_gpio_init(void)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_reset_gpio_init */
 #warning "Please implement ssd1306_interface_reset_gpio_init() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_reset_gpio_init */
 }
 
 /**
@@ -210,10 +210,10 @@ uint8_t ssd1306_interface_reset_gpio_init(void)
  */
 uint8_t ssd1306_interface_reset_gpio_deinit(void)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_reset_gpio_deinit */
 #warning "Please implement ssd1306_interface_reset_gpio_deinit() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_reset_gpio_deinit */
 }
 
 /**
@@ -226,10 +226,10 @@ uint8_t ssd1306_interface_reset_gpio_deinit(void)
  */
 uint8_t ssd1306_interface_reset_gpio_write(uint8_t value)
 {
-    /* USER CODE BEGIN 0 */
+    /* USER CODE BEGIN ssd1306_interface_reset_gpio_write */
 #warning "Please implement ssd1306_interface_reset_gpio_write() for your application"
     return 0;
-    /* USER CODE END 0 */
+    /* USER CODE END ssd1306_interface_reset_gpio_write */
 }
 
 /* USER CODE BEGIN 1 */
