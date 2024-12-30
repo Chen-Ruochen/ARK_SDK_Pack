@@ -42,12 +42,10 @@ typedef enum ark_err_e {
     ARK_ERR_FULL        = 6,
     ARK_ERR_EMPTY       = 7,
     ARK_ERR_NOT_FOUND   = 8,
-    ARK_ERR_EXIST       = 9,
-    ARK_ERR_OVERFLOW    = 10,
     ARK_ERR_NOT_INIT    = 12,
     ARK_ERR_NOT_SUPPORT = 13,
-    ARK_ERR_NOT_PERM    = 14,
-    ARK_ERR_NOT_READY   = 15,
+    ARK_ERR_LOCKED      = 14,
+    ARK_ERR_UNLOCKED    = 15,
 } ark_err_t;
 
 #endif

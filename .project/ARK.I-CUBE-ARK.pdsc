@@ -5,6 +5,8 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-12-30" version="1.2.7">-Update target folder path
+-Add module logger</release>
         <release date="2024-12-28" version="1.2.6">-Fixed commnet error</release>
         <release date="2024-12-28" version="1.2.5">-Fixed comment error</release>
         <release date="2024-12-27" version="1.2.4">-Change target folder</release>
@@ -41,7 +43,7 @@
         <keyword>IMPLEMENTED_WITH_STM32CUBEMX</keyword>
     </keywords>
     <taxonomy>
-        <description Cclass="Protocol">Protocol</description>
+        <description Cclass="Utility">Utility</description>
         <description Cclass="Module">Module</description>
         <description Cclass="Common">Common</description>
         <description Cclass="Driver">Driver</description>
@@ -102,27 +104,6 @@
         <bundle Cbundle="Files" Cclass="Module" Cversion="1.0.0">
             <description>Bundle of Modules</description>
             <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
-            <component Cgroup="CRC16" condition="Condition Need Top Header" maxInstances="1">
-                <description>Component of CRC16</description>
-                <files>
-                    <file category="source" name="Middlewares/Third_Party/CRC16/module_crc16_xmodem.c"/>
-                    <file category="header" name="Middlewares/Third_Party/CRC16/module_crc16_xmodem.h"/>
-                </files>
-            </component>
-            <component Cgroup="QFsm" condition="Condition Need Top Header" maxInstances="1">
-                <description>Component of QFsm</description>
-                <files>
-                    <file category="source" name="Middlewares/Third_Party/QFsm/module_qfsm.c"/>
-                    <file category="header" name="Middlewares/Third_Party/QFsm/module_qfsm.h"/>
-                </files>
-            </component>
-            <component Cgroup="RingFIFO" condition="Condition Need Top Header" maxInstances="1">
-                <description>Component of RingFIFO</description>
-                <files>
-                    <file category="source" name="Middlewares/Third_Party/RingFIFO/module_ring_fifo.c"/>
-                    <file category="header" name="Middlewares/Third_Party/RingFIFO/module_ring_fifo.h"/>
-                </files>
-            </component>
             <component Cgroup="cJSON" maxInstances="1">
                 <description>Component of cJSON</description>
                 <files>
@@ -130,15 +111,36 @@
                     <file category="header" name="Middlewares/Third_Party/cJSON/cJSON.h"/>
                 </files>
             </component>
-        </bundle>
-        <bundle Cbundle="Files" Cclass="Protocol" Cversion="1.0.0">
-            <description>Bundle of Protocol</description>
-            <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
-            <component Cgroup="RCP" condition="Condition RCP" maxInstances="1">
-                <description>Component of RCP</description>
+            <component Cgroup="Serial_Logger" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of Serial Logger</description>
                 <files>
-                    <file category="source" name="Middlewares/Third_Party/RCP/protocol_rcp.c"/>
-                    <file category="header" name="Middlewares/Third_Party/RCP/protocol_rcp.h"/>
+                    <file category="source" name="Middlewares/Third_Party/Serial_Logger/module_logger.c"/>
+                    <file category="header" name="Middlewares/Third_Party/Serial_Logger/module_logger.h"/>
+                </files>
+            </component>
+        </bundle>
+        <bundle Cbundle="Files" Cclass="Utility" Cversion="1.0.0">
+            <description>Bundle of Utilities</description>
+            <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
+            <component Cgroup="CRC16" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of CRC16</description>
+                <files>
+                    <file category="source" name="Utilities/CRC16/module_crc16_xmodem.c"/>
+                    <file category="header" name="Utilities/CRC16/module_crc16_xmodem.h"/>
+                </files>
+            </component>
+            <component Cgroup="QFsm" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of QFsm</description>
+                <files>
+                    <file category="source" name="Utilities/QFsm/module_qfsm.c"/>
+                    <file category="header" name="Utilities/QFsm/module_qfsm.h"/>
+                </files>
+            </component>
+            <component Cgroup="RingFIFO" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of RingFIFO</description>
+                <files>
+                    <file category="source" name="Utilities/RingFIFO/module_ring_fifo.c"/>
+                    <file category="header" name="Utilities/RingFIFO/module_ring_fifo.h"/>
                 </files>
             </component>
         </bundle>

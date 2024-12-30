@@ -19,6 +19,8 @@ typedef struct ring_fifo_s {
     uint32_t size;
     uint32_t in;
     uint32_t out;
+    ark_err_t (*lock)(void);
+    ark_err_t (*unlock)(void);
 } ring_fifo_t;
 
 
