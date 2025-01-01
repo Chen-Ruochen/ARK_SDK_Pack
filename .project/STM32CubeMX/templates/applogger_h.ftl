@@ -23,6 +23,7 @@
 #ifndef APP_LOGGER_H
 #define APP_LOGGER_H
 #include "common_lib.h"
+#include "module_logger.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,7 +31,8 @@ extern "C" {
 
 #define LOGGER_LEVEL ${valLevel}
 
-void I_CUBE_Logger_Init(void);
+void I_CUBE_Logger_Init(void *ptr);
+void I_CUBE_Logger_Process(void);
 
 #ifdef __cplusplus
 }

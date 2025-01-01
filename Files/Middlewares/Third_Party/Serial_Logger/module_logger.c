@@ -19,13 +19,13 @@ typedef struct logger_s {
 
 static logger_t s_logger;
 
-ark_err_t Logger_Init(uint16_t depth, uint16_t length, queue_init init, queue_push push, queue_pop pop, serial_transmit tx)
+ark_err_t Logger_Init(void *ptr, uint16_t depth, uint16_t length, queue_init init, queue_push push, queue_pop pop, serial_transmit tx)
 {
     s_logger.qinit = init;
     s_logger.qpush = push;
     s_logger.qpop = pop;
     s_logger.tx = tx;
-    if (s_logger.qinit(depth, length) != ARK_OK) {
+    if (s_logger.qinit(ptr, depth, length) != ARK_OK) {
         s_logger.log_init = false;
         return ARK_ERR;
     }

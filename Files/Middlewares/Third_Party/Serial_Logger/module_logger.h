@@ -26,12 +26,12 @@ extern "C" {
 #define LOGGER_BUF_SIZE         1024
 
 
-typedef ark_err_t   (*queue_init)(uint16_t depth, uint16_t len);
+typedef ark_err_t   (*queue_init)(void *ptr, uint16_t depth, uint16_t len);
 typedef ark_err_t   (*queue_push)(void *data);
 typedef ark_err_t   (*queue_pop)(void *data);
 typedef void        (*serial_transmit)(void *data, uint16_t len);
 
-ark_err_t Logger_Init(uint16_t depth, uint16_t length, queue_init init, queue_push push, queue_pop pop, serial_transmit tx);
+ark_err_t Logger_Init(void *ptr, uint16_t depth, uint16_t length, queue_init init, queue_push push, queue_pop pop, serial_transmit tx);
 void Logger_Debug(const char *fmt, ...);
 void Logger_Info(const char *fmt, ...);
 void Logger_Warn(const char *fmt, ...);

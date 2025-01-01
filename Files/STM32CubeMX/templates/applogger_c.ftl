@@ -32,7 +32,7 @@
 
 /* USER CODE END 0 */
 
-static ark_err_t log_queue_init(uint16_t depth, uint16_t len)
+static ark_err_t log_queue_init(void *ptr, uint16_t depth, uint16_t len)
 {
     /* USER CODE BEGIN log_queue_init 0 */
     return ARK_OK;
@@ -60,12 +60,12 @@ static void log_tx(void *data, uint16_t len)
     /* USER CODE END log_tx 0 */
 }
 
-void I_CUBE_Logger_Init(void)
+void I_CUBE_Logger_Init(void *ptr)
 {
     /* USER CODE BEGIN I_CUBE_Logger_Init 0 */
 
     /* USER CODE END I_CUBE_Logger_Init 0 */
-    if (Logger_Init(${valLoggerDepth}, ${valLoggerLength}, &log_queue_init, &log_queue_push, &log_queue_pop, &log_tx) != ARK_OK) {
+    if (Logger_Init(ptr, ${valLoggerDepth}, ${valLoggerLength}, &log_queue_init, &log_queue_push, &log_queue_pop, &log_tx) != ARK_OK) {
         /* USER CODE BEGIN I_CUBE_Logger_Init 1 */
 
         /* USER CODE END I_CUBE_Logger_Init 1 */
