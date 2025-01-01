@@ -24,6 +24,9 @@
 #define APP_LOGGER_H
 #include "common_lib.h"
 #include "module_logger.h"
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
 
 #ifdef __cplusplus
 extern "C" {
@@ -31,8 +34,16 @@ extern "C" {
 
 #define LOGGER_LEVEL ${valLevel}
 
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
 void I_CUBE_Logger_Init(void *ptr);
 void I_CUBE_Logger_Process(void);
+
+/* USER CODE BEGIN 1 */
+
+/* USER CODE END 1 */
 
 #ifdef __cplusplus
 }
