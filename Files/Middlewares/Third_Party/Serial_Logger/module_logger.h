@@ -23,8 +23,6 @@ extern "C" {
 #ifndef LOGGER_LEVEL
 #define LOGGER_LEVEL            LOGGERLEVEL_DEBUG
 #endif
-#define LOGGER_BUF_SIZE         1024
-
 
 typedef ark_err_t   (*queue_init)(void *ptr, uint16_t depth, uint16_t len);
 typedef ark_err_t   (*queue_push)(void *data);
