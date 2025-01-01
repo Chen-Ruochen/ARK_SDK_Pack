@@ -33,7 +33,7 @@ ark_err_t Logger_Init(void *ptr, uint16_t depth, uint16_t length, queue_init ini
     return ARK_OK;
 }
 
-void Logger_Debug(const char *fmt, ...)
+void Logger_Debug(const char *tag, const char *fmt, ...)
 {
 #if LOGGER_LEVEL >= 4
     if (!s_logger.log_init) {
@@ -43,14 +43,18 @@ void Logger_Debug(const char *fmt, ...)
     va_list args;
     va_start(args, fmt);
     vprintf(fmt, args);
-    va_end(args);
-    //拼凑前部分[DBG] 然后调用队列push函数
-    snprintf((char *)s_logger.logbuf, sizeof(s_logger.logbuf), "[DBG]:%s", fmt);
+
+    // 拼凑前部分[DBG][TAG] 然后调用队列push函数
+    char formatted_msg[128];
+    vsnprintf(formatted_msg, sizeof(formatted_msg), fmt, args);
+    snprintf((char *)s_logger.logbuf, sizeof(s_logger.logbuf), "[DBG][%s]:%s", tag, formatted_msg);
     s_logger.qpush(s_logger.logbuf);
+
+    va_end(args);
 #endif
 }
 
-void Logger_Info(const char *fmt, ...)
+void Logger_Info(const char *tag, const char *fmt, ...)
 {
 #if LOGGER_LEVEL >= 3
     if (!s_logger.log_init) {
@@ -60,14 +64,18 @@ void Logger_Info(const char *fmt, ...)
     va_list args;
     va_start(args, fmt);
     vprintf(fmt, args);
-    va_end(args);
-    //拼凑前部分[INFO] 然后调用队列push函数
-    snprintf((char *)s_logger.logbuf, sizeof(s_logger.logbuf), "\033[32m[INF]\033[0m:%s", fmt);
+
+    // 拼凑前部分[INFO][TAG] 然后调用队列push函数
+    char formatted_msg[128];
+    vsnprintf(formatted_msg, sizeof(formatted_msg), fmt, args);
+    snprintf((char *)s_logger.logbuf, sizeof(s_logger.logbuf), "\033[32m[INF]\033[0m[%s]:%s", tag, formatted_msg);
     s_logger.qpush(s_logger.logbuf);
+
+    va_end(args);
 #endif
 }
 
-void Logger_Warn(const char *fmt, ...)
+void Logger_Warn(const char *tag, const char *fmt, ...)
 {
 #if LOGGER_LEVEL >= 2
     if (!s_logger.log_init) {
@@ -77,14 +85,18 @@ void Logger_Warn(const char *fmt, ...)
     va_list args;
     va_start(args, fmt);
     vprintf(fmt, args);
-    va_end(args);
-    //拼凑前部分[WARN] 然后调用队列push函数
-    snprintf((char *)s_logger.logbuf, sizeof(s_logger.logbuf), "\033[33m[WRN]\033[0m:%s", fmt);
+
+    // 拼凑前部分[WARN][TAG] 然后调用队列push函数
+    char formatted_msg[128];
+    vsnprintf(formatted_msg, sizeof(formatted_msg), fmt, args);
+    snprintf((char *)s_logger.logbuf, sizeof(s_logger.logbuf), "\033[33m[WRN]\033[0m[%s]:%s", tag, formatted_msg);
     s_logger.qpush(s_logger.logbuf);
+
+    va_end(args);
 #endif
 }
 
-void Logger_Error(const char *fmt, ...)
+void Logger_Error(const char *tag, const char *fmt, ...)
 {
 #if LOGGER_LEVEL >= 1
     if (!s_logger.log_init) {
@@ -94,10 +106,14 @@ void Logger_Error(const char *fmt, ...)
     va_list args;
     va_start(args, fmt);
     vprintf(fmt, args);
-    va_end(args);
-    //拼凑前部分[ERR] 然后调用队列push函数
-    snprintf((char *)s_logger.logbuf, sizeof(s_logger.logbuf), "\033[31m[ERR]\033[0m:%s", fmt);
+
+    // 拼凑前部分[ERR][TAG] 然后调用队列push函数
+    char formatted_msg[128];
+    vsnprintf(formatted_msg, sizeof(formatted_msg), fmt, args);
+    snprintf((char *)s_logger.logbuf, sizeof(s_logger.logbuf), "\033[31m[ERR]\033[0m[%s]:%s", tag, formatted_msg);
     s_logger.qpush(s_logger.logbuf);
+
+    va_end(args);
 #endif
 }
 

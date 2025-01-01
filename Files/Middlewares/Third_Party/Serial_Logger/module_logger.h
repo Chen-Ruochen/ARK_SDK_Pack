@@ -32,10 +32,10 @@ typedef ark_err_t   (*queue_pop)(void *data);
 typedef void        (*serial_transmit)(void *data, uint16_t len);
 
 ark_err_t Logger_Init(void *ptr, uint16_t depth, uint16_t length, queue_init init, queue_push push, queue_pop pop, serial_transmit tx);
-void Logger_Debug(const char *fmt, ...);
-void Logger_Info(const char *fmt, ...);
-void Logger_Warn(const char *fmt, ...);
-void Logger_Error(const char *fmt, ...);
+void Logger_Debug(const char *tag, const char *fmt, ...);
+void Logger_Info(const char *tag, const char *fmt, ...);
+void Logger_Warn(const char *tag, const char *fmt, ...);
+void Logger_Error(const char *tag, const char *fmt, ...);
 void Logger_State_Machine(void);
 
 
