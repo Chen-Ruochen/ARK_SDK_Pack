@@ -15,26 +15,25 @@
 extern "C" {
 #endif
 
-#define LOGGERLEVEL_DEBUG       4
-#define LOGGERLEVEL_INFO        3
-#define LOGGERLEVEL_WARN        2
-#define LOGGERLEVEL_ERROR       1
-
+//4:debug, 3:info, 2:warn, 1:error
 #ifndef LOGGER_LEVEL
-#define LOGGER_LEVEL            LOGGERLEVEL_DEBUG
+#define LOGGER_LEVEL            (4)
 #endif
 
-typedef ark_err_t   (*queue_init)(void *ptr, uint16_t depth, uint16_t len);
-typedef ark_err_t   (*queue_push)(void *data);
-typedef ark_err_t   (*queue_pop)(void *data);
+#ifndef LOGGER_LENGTH
+#define LOGGER_LENGTH           (256)
+#endif
+
+typedef ark_err_t   (*mutex_init)(void);
+typedef ark_err_t   (*mutex_set)(bool lock);
+typedef ark_err_t   (*mutex_get)(void);
 typedef void        (*serial_transmit)(void *data, uint16_t len);
 
-ark_err_t Logger_Init(void *ptr, uint16_t depth, uint16_t length, queue_init init, queue_push push, queue_pop pop, serial_transmit tx);
+ark_err_t Logger_Init(mutex_init init, mutex_set set, mutex_get get, serial_transmit tx);
 void Logger_Debug(const char *tag, const char *fmt, ...);
 void Logger_Info(const char *tag, const char *fmt, ...);
 void Logger_Warn(const char *tag, const char *fmt, ...);
 void Logger_Error(const char *tag, const char *fmt, ...);
-void Logger_State_Machine(void);
 
 
 #ifdef __cplusplus

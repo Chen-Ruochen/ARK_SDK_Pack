@@ -10,21 +10,21 @@
 
 typedef struct logger_s {
     bool log_init;
-    queue_init qinit;
-    queue_push qpush;
-    queue_pop qpop;
+    mutex_init minit;
+    mutex_set mset;
+    mutex_get mget;
     serial_transmit tx;
 } logger_t;
 
 static logger_t s_logger;
 
-ark_err_t Logger_Init(void *ptr, uint16_t depth, uint16_t length, queue_init init, queue_push push, queue_pop pop, serial_transmit tx)
+ark_err_t Logger_Init(mutex_init init, mutex_set set, mutex_get get, serial_transmit tx)
 {
-    s_logger.qinit = init;
-    s_logger.qpush = push;
-    s_logger.qpop = pop;
+    s_logger.minit = init;
+    s_logger.mset = set;
+    s_logger.mget = get;
     s_logger.tx = tx;
-    if (s_logger.qinit(ptr, depth, length) != ARK_OK) {
+    if (s_logger.minit() != ARK_OK) {
         s_logger.log_init = false;
         return ARK_ERR;
     }
@@ -39,18 +39,24 @@ void Logger_Debug(const char *tag, const char *fmt, ...)
         return;
     }
 
+    if (s_logger.mget() != ARK_OK) {
+        return;
+    }
+
+    s_logger.mset(true);
+
+    uint8_t buf[LOGGER_LENGTH] = {0};
+    memcpy(buf, "[DBG]", sizeof("[DBG]") - 1);
+    memcpy(buf + sizeof("[DBG]") - 1, tag, strlen(tag));
+
     va_list args;
     va_start(args, fmt);
-    vprintf(fmt, args);
-
-    // 拼凑前部分[DBG][TAG] 然后调用队列push函数
-    char formatted_msg[128] = {0};
-    char logbuf[256] = {0};
-    vsnprintf(formatted_msg, sizeof(formatted_msg), fmt, args);
-    snprintf((char *)logbuf, sizeof(logbuf), "[DBG][%s]:%s", tag, formatted_msg);
-    s_logger.qpush(logbuf);
-
+    vsnprintf((char *)buf + sizeof("[DBG]") - 1 + strlen(tag), sizeof(buf), fmt, args);
     va_end(args);
+
+    s_logger.tx(buf, strlen(buf));
+
+    s_logger.mset(false);
 #endif
 }
 
@@ -61,18 +67,24 @@ void Logger_Info(const char *tag, const char *fmt, ...)
         return;
     }
 
+    if (s_logger.mget() != ARK_OK) {
+        return;
+    }
+
+    s_logger.mset(true);
+
+    uint8_t buf[LOGGER_LENGTH] = {0};
+    memcpy(buf, "\033[32m[INF]\033[0m", sizeof("\033[32m[INF]\033[0m") - 1);
+    memcpy(buf + sizeof("\033[32m[INF]\033[0m") - 1, tag, strlen(tag));
+
     va_list args;
     va_start(args, fmt);
-    vprintf(fmt, args);
-
-    // 拼凑前部分[INFO][TAG] 然后调用队列push函数
-    char formatted_msg[128] = {0};
-    char logbuf[256] = {0};
-    vsnprintf(formatted_msg, sizeof(formatted_msg), fmt, args);
-    snprintf((char *)logbuf, sizeof(logbuf), "\033[32m[INF]\033[0m[%s]:%s", tag, formatted_msg);
-    s_logger.qpush(logbuf);
-
+    vsnprintf((char *)buf + sizeof("\033[32m[INF]\033[0m") - 1 + strlen(tag), sizeof(buf), fmt, args);
     va_end(args);
+
+    s_logger.tx(buf, strlen(buf));
+
+    s_logger.mset(false);
 #endif
 }
 
@@ -83,18 +95,24 @@ void Logger_Warn(const char *tag, const char *fmt, ...)
         return;
     }
 
+    if (s_logger.mget() != ARK_OK) {
+        return;
+    }
+
+    s_logger.mset(true);
+
+    uint8_t buf[LOGGER_LENGTH] = {0};
+    memcpy(buf, "\033[33m[WRN]\033[0m", sizeof("\033[33m[WRN]\033[0m") - 1);
+    memcpy(buf + sizeof("\033[33m[WRN]\033[0m") - 1, tag, strlen(tag));
+
     va_list args;
     va_start(args, fmt);
-    vprintf(fmt, args);
-
-    // 拼凑前部分[WARN][TAG] 然后调用队列push函数
-    char formatted_msg[128] = {0};
-    char logbuf[256] = {0};
-    vsnprintf(formatted_msg, sizeof(formatted_msg), fmt, args);
-    snprintf((char *)logbuf, sizeof(logbuf), "\033[33m[WRN]\033[0m[%s]:%s", tag, formatted_msg);
-    s_logger.qpush(logbuf);
-
+    vsnprintf((char *)buf + sizeof("\033[33m[WRN]\033[0m") - 1 + strlen(tag), sizeof(buf), fmt, args);
     va_end(args);
+
+    s_logger.tx(buf, strlen(buf));
+
+    s_logger.mset(false);
 #endif
 }
 
@@ -105,30 +123,23 @@ void Logger_Error(const char *tag, const char *fmt, ...)
         return;
     }
 
-    va_list args;
-    va_start(args, fmt);
-    vprintf(fmt, args);
-
-    // 拼凑前部分[ERR][TAG] 然后调用队列push函数
-    char formatted_msg[128] = {0};
-    char logbuf[256] = {0};
-    vsnprintf(formatted_msg, sizeof(formatted_msg), fmt, args);
-    snprintf((char *)logbuf, sizeof(logbuf), "\033[31m[ERR]\033[0m[%s]:%s", tag, formatted_msg);
-    s_logger.qpush(logbuf);
-
-    va_end(args);
-#endif
-}
-
-void Logger_State_Machine(void)
-{
-    if (!s_logger.log_init) {
+    if (s_logger.mget() != ARK_OK) {
         return;
     }
 
-    uint8_t logbuf[256] = {0};
-    //调用队列pop函数 然后调用串口发送函数
-    if (s_logger.qpop(&logbuf) == ARK_OK) {
-        s_logger.tx(&logbuf, strlen((char *)logbuf));
-    }
+    s_logger.mset(true);
+
+    uint8_t buf[LOGGER_LENGTH] = {0};
+    memcpy(buf, "\033[31m[ERR]\033[0m", sizeof("\033[31m[ERR]\033[0m") - 1);
+    memcpy(buf + sizeof("\033[31m[ERR]\033[0m") - 1, tag, strlen(tag));
+
+    va_list args;
+    va_start(args, fmt);
+    vsnprintf((char *)buf + sizeof("\033[31m[ERR]\033[0m") - 1 + strlen(tag), sizeof(buf), fmt, args);
+    va_end(args);
+
+    s_logger.tx(buf, strlen(buf));
+
+    s_logger.mset(false);
+#endif
 }
