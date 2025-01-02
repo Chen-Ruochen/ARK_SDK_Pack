@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2025-01-02" version="1.3.4">-Add Serial Logger Raw Output</release>
         <release date="2025-01-02" version="1.3.3">-Fixed Serial Logger Define</release>
         <release date="2025-01-02" version="1.3.2">-Change Serial Logger Param</release>
         <release date="2025-01-01" version="1.3.1">-Fixed Serial Logger memory error</release>

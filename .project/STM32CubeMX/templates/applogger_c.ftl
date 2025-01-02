@@ -56,7 +56,7 @@ static void log_tx(void *data, uint16_t len)
     /* USER CODE END log_tx 0 */
 }
 
-void I_CUBE_Logger_Init(void *ptr)
+void I_CUBE_Logger_Init(void)
 {
     /* USER CODE BEGIN I_CUBE_Logger_Init 0 */
 

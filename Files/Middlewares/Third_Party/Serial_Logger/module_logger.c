@@ -54,7 +54,7 @@ void Logger_Debug(const char *tag, const char *fmt, ...)
     vsnprintf((char *)buf + sizeof("[DBG]") - 1 + strlen(tag), sizeof(buf), fmt, args);
     va_end(args);
 
-    s_logger.tx(buf, strlen(buf));
+    s_logger.tx(buf, strlen((char *)buf));
 
     s_logger.mset(false);
 #endif
@@ -82,7 +82,7 @@ void Logger_Info(const char *tag, const char *fmt, ...)
     vsnprintf((char *)buf + sizeof("\033[32m[INF]\033[0m") - 1 + strlen(tag), sizeof(buf), fmt, args);
     va_end(args);
 
-    s_logger.tx(buf, strlen(buf));
+    s_logger.tx(buf, strlen((char *)buf));
 
     s_logger.mset(false);
 #endif
@@ -110,7 +110,7 @@ void Logger_Warn(const char *tag, const char *fmt, ...)
     vsnprintf((char *)buf + sizeof("\033[33m[WRN]\033[0m") - 1 + strlen(tag), sizeof(buf), fmt, args);
     va_end(args);
 
-    s_logger.tx(buf, strlen(buf));
+    s_logger.tx(buf, strlen((char *)buf));
 
     s_logger.mset(false);
 #endif
@@ -138,7 +138,33 @@ void Logger_Error(const char *tag, const char *fmt, ...)
     vsnprintf((char *)buf + sizeof("\033[31m[ERR]\033[0m") - 1 + strlen(tag), sizeof(buf), fmt, args);
     va_end(args);
 
-    s_logger.tx(buf, strlen(buf));
+    s_logger.tx(buf, strlen((char *)buf));
+
+    s_logger.mset(false);
+#endif
+}
+
+void Logger_Raw(const char *fmt, ...)
+{
+#if LOGGER_LEVEL >= 4
+    if (!s_logger.log_init) {
+        return;
+    }
+
+    if (s_logger.mget() != ARK_OK) {
+        return;
+    }
+
+    s_logger.mset(true);
+
+    uint8_t buf[LOGGER_LENGTH] = {0};
+
+    va_list args;
+    va_start(args, fmt);
+    vsnprintf((char *)buf, sizeof(buf), fmt, args);
+    va_end(args);
+
+    s_logger.tx(buf, strlen((char *)buf));
 
     s_logger.mset(false);
 #endif

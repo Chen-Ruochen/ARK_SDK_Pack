@@ -34,6 +34,7 @@ void Logger_Debug(const char *tag, const char *fmt, ...);
 void Logger_Info(const char *tag, const char *fmt, ...);
 void Logger_Warn(const char *tag, const char *fmt, ...);
 void Logger_Error(const char *tag, const char *fmt, ...);
+void Logger_Raw(const char *fmt, ...);
 
 
 #ifdef __cplusplus

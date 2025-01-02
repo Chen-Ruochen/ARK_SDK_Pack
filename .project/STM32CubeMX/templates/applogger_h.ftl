@@ -41,7 +41,7 @@ extern "C" {
 
 /* USER CODE END 0 */
 
-void I_CUBE_Logger_Init(void *ptr);
+void I_CUBE_Logger_Init(void);
 
 /* USER CODE BEGIN 1 */
 
