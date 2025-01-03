@@ -5,6 +5,8 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2025-01-03" version="1.3.5">-Add Module System FTL
+-Add Driver ADuM4160</release>
         <release date="2025-01-02" version="1.3.4">-Add Serial Logger Raw Output</release>
         <release date="2025-01-02" version="1.3.3">-Fixed Serial Logger Define</release>
         <release date="2025-01-02" version="1.3.2">-Change Serial Logger Param</release>
@@ -107,6 +109,13 @@
                     <file category="source" name="Middlewares/Third_Party/SFUD/sfud_sfdp.c"/>
                 </files>
             </component>
+            <component Cgroup="ADuM4160" condition="Condition Need Top Header" maxInstances="1">
+                <description>Componnet of ADuM4160</description>
+                <files>
+                    <file category="source" name="Middlewares/Third_Party/ADuM4160/drv_adum4160.c"/>
+                    <file category="header" name="Middlewares/Third_Party/ADuM4160/drv_adum4160.h"/>
+                </files>
+            </component>
         </bundle>
         <bundle Cbundle="Files" Cclass="Module" Cversion="1.0.0">
             <description>Bundle of Modules</description>
@@ -124,6 +133,10 @@
                     <file category="source" name="Middlewares/Third_Party/Serial_Logger/module_logger.c"/>
                     <file category="header" name="Middlewares/Third_Party/Serial_Logger/module_logger.h"/>
                 </files>
+            </component>
+            <component Cgroup="System" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of System</description>
+                <files/>
             </component>
         </bundle>
         <bundle Cbundle="Files" Cclass="Utility" Cversion="1.0.0">

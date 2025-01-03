@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<IP xmlns="http://mcd.rou.st.com/modules.php?name=mcu" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" DBVersion="V4.0" Name="I-CUBE-ARK" RootFolder="Packs/ARK/I-CUBE-ARK/1.3.4/" Version="1.3.4" ns0:schemaLocation="http://mcd.rou.st.com/modules.php?name=mcu ../../../../../../../doc/V4/Development/Specifications/db/thirdPartyDb.xsd">
+<IP xmlns="http://mcd.rou.st.com/modules.php?name=mcu" xmlns:ns0="http://www.w3.org/2001/XMLSchema-instance" DBVersion="V4.0" Name="I-CUBE-ARK" RootFolder="Packs/ARK/I-CUBE-ARK/1.3.5/" Version="1.3.5" ns0:schemaLocation="http://mcd.rou.st.com/modules.php?name=mcu ../../../../../../../doc/V4/Development/Specifications/db/thirdPartyDb.xsd">
     <RefConfig Name="CommonJjHeader">
         <Component Name="Common:Header:$CommonJjHeader"/>
     </RefConfig>
@@ -7,6 +7,7 @@
         <Component Name="FilesCcDriver:Button:FlexBtn:$FilesCcDriverJjButton"/>
         <Component Name="FilesCcDriver:Display:SSD1306:$FilesCcDriverJjDisplay"/>
         <Component Name="FilesCcDriver:SFUD:$FilesCcDriverJjSFUD"/>
+        <Component Name="FilesCcDriver:ADuM4160:$FilesCcDriverJjADuM4160"/>
         <ConfigFile Name="FLEXBTN_APP_H"/>
         <ConfigFile Name="FLEXBTN_APP_C"/>
         <ConfigFile Name="SSD1306_IF_H"/>
@@ -21,8 +22,11 @@
     <RefConfig Name="ModuleJjFiles">
         <Component Name="FilesCcModule:cJSON:$FilesCcModuleJjcJSON"/>
         <Component Name="FilesCcModule:SerialIiLogger:$FilesCcModuleJjSerialIiLogger"/>
+        <Component Name="FilesCcModule:System:$FilesCcModuleJjSystem"/>
         <ConfigFile Name="LOGGER_APP_H"/>
         <ConfigFile Name="LOGGER_APP_C"/>
+        <ConfigFile Name="SYSTEM_H"/>
+        <ConfigFile Name="SYSTEM_C"/>
     </RefConfig>
     <RefConfig Name="UtilityJjFiles">
         <Component Name="FilesCcUtility:CRC16:$FilesCcUtilityJjCRC16"/>
@@ -30,7 +34,7 @@
         <Component Name="FilesCcUtility:RingFIFO:$FilesCcUtilityJjRingFIFO"/>
     </RefConfig>
     <RefConfigFile Added="true" Description="FLEXBTN_APP_H" Name="FLEXBTN_APP_H" Template="appflexbtn_h.ftl" destinationFolder="/FlexBtn/App">
-        <File Category="header" Condition="SEMFilesCcDriverJjButtonJjFlexBtn" Name="./app_flexbtn.h"/>
+        <File Category="header" Condition="FlexBtn_Enabled::SEMFilesCcDriverJjButtonJjFlexBtn" Name="./app_flexbtn.h"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_LPT" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_SPT" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_LHT" OptimizationCondition="equal"/>
@@ -46,31 +50,31 @@
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_CONF_CLICKINTERVAL" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="FLEXBTN_APP_C" Name="FLEXBTN_APP_C" Template="appflexbtn_c.ftl" destinationFolder="/FlexBtn/App">
-        <File Category="source" Condition="SEMFilesCcDriverJjButtonJjFlexBtn" Name="./app_flexbtn.c"/>
+        <File Category="source" Condition="FlexBtn_Enabled::SEMFilesCcDriverJjButtonJjFlexBtn" Name="./app_flexbtn.c"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="FLEXBTN_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="SSD1306_IF_H" Name="SSD1306_IF_H" Template="ssd1306if_h.ftl" destinationFolder="/SSD1306/Interface">
-        <File Category="header" Condition="SEMFilesCcDriverJjDisplayJjSSD1306" Name="./ssd1306_if.h"/>
+        <File Category="header" Condition="SSD1306_Enabled::SEMFilesCcDriverJjDisplayJjSSD1306" Name="./ssd1306_if.h"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_INTERFACE" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="SSD1306_IF_C" Name="SSD1306_IF_C" Template="ssd1306if_c.ftl" destinationFolder="/SSD1306/Interface">
-        <File Category="source" Condition="SEMFilesCcDriverJjDisplayJjSSD1306" Name="./ssd1306_if.c"/>
+        <File Category="source" Condition="SSD1306_Enabled::SEMFilesCcDriverJjDisplayJjSSD1306" Name="./ssd1306_if.c"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_INTERFACE" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="SSD1306_APP_H" Name="SSD1306_APP_H" Template="appssd1306_h.ftl" destinationFolder="/SSD1306/App">
-        <File Category="header" Condition="SEMFilesCcDriverJjDisplayJjSSD1306" Name="./app_ssd1306.h"/>
+        <File Category="header" Condition="SSD1306_Enabled::SEMFilesCcDriverJjDisplayJjSSD1306" Name="./app_ssd1306.h"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_INTERFACE" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_VERSION" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_ADDR" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="SSD1306_APP_C" Name="SSD1306_APP_C" Template="appssd1306_c.ftl" destinationFolder="/SSD1306/App">
-        <File Category="source" Condition="SEMFilesCcDriverJjDisplayJjSSD1306" Name="./app_ssd1306.c"/>
+        <File Category="source" Condition="SSD1306_Enabled::SEMFilesCcDriverJjDisplayJjSSD1306" Name="./app_ssd1306.c"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SSD1306_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="SFUD_CFG_H" Name="SFUD_CFG_H" Template="sfudcfg_h.ftl" destinationFolder="/SFUD/Interface">
-        <File Category="header" Condition="SEMFilesCcDriverJjSFUD" Name="./sfud_cfg.h"/>
+        <File Category="header" Condition="SFUD_Enabled::SEMFilesCcDriverJjSFUD" Name="./sfud_cfg.h"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_FLASHNAME" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_CUSTOMTABLE" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_SPINAME" OptimizationCondition="equal"/>
@@ -80,15 +84,15 @@
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_CUSTOMNAME" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="SFUD_IF_C" Name="SFUD_IF_C" Template="sfudif_c.ftl" destinationFolder="/SFUD/Interface">
-        <File Category="source" Condition="SEMFilesCcDriverJjSFUD" Name="./sfud_if.c"/>
+        <File Category="source" Condition="SFUD_Enabled::SEMFilesCcDriverJjSFUD" Name="./sfud_if.c"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="SFUD_APP_H" Name="SFUD_APP_H" Template="appsfud_h.ftl" destinationFolder="/SFUD/App">
-        <File Category="header" Condition="SEMFilesCcDriverJjSFUD" Name="./app_sfud.h"/>
+        <File Category="header" Condition="SFUD_Enabled::SEMFilesCcDriverJjSFUD" Name="./app_sfud.h"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="SFUD_APP_C" Name="SFUD_APP_C" Template="appsfud_c.ftl" destinationFolder="/SFUD/App">
-        <File Category="source" Condition="SEMFilesCcDriverJjSFUD" Name="./app_sfud.c"/>
+        <File Category="source" Condition="SFUD_Enabled::SEMFilesCcDriverJjSFUD" Name="./app_sfud.c"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_ERASECMD" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_FLASHNAME" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_TYPEID" OptimizationCondition="equal"/>
@@ -105,15 +109,23 @@
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="SFUD_CUSTOMNAME" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="LOGGER_APP_H" Name="LOGGER_APP_H" Template="applogger_h.ftl" destinationFolder="/Serial_Logger/App">
-        <File Category="header" Condition="SEMFilesCcModuleJjSerialIiLogger" Name="./app_logger.h"/>
+        <File Category="header" Condition="Logger_Enabled::SEMFilesCcModuleJjSerialIiLogger" Name="./app_logger.h"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="LOGGER_LEVEL" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="LOGGER_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefConfigFile Added="true" Description="LOGGER_APP_C" Name="LOGGER_APP_C" Template="applogger_c.ftl" destinationFolder="/Serial_Logger/App">
-        <File Category="source" Condition="SEMFilesCcModuleJjSerialIiLogger" Name="./app_logger.c"/>
+        <File Category="source" Condition="Logger_Enabled::SEMFilesCcModuleJjSerialIiLogger" Name="./app_logger.c"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="LOGGER_DEPTH" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="LOGGER_VERSION" OptimizationCondition="equal"/>
         <Argument Added="true" AddressOf="false" GenericType="simple" Name="LOGGER_LENGTH" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Description="SYSTEM_H" Name="SYSTEM_H" Template="modulesystem_h.ftl" destinationFolder="/System">
+        <File Category="header" Condition="System_Enabled::SEMFilesCcModuleJjSystem" Name="./module_system.h"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SYSTEM_VERSION" OptimizationCondition="equal"/>
+    </RefConfigFile>
+    <RefConfigFile Added="true" Description="SYSTEM_C" Name="SYSTEM_C" Template="modulesystem_c.ftl" destinationFolder="/System">
+        <File Category="source" Condition="System_Enabled::SEMFilesCcModuleJjSystem" Name="./module_system.c"/>
+        <Argument Added="true" AddressOf="false" GenericType="simple" Name="SYSTEM_VERSION" OptimizationCondition="equal"/>
     </RefConfigFile>
     <RefComponent Cclass="Common" Cgroup="Header" Cversion="1Gg0Gg4">
         <File Category="header" Condition="" Name="Middlewares/Third_Party/Header/common_lib.h"/>
@@ -144,6 +156,10 @@
         <File Category="header" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_flash_def.h"/>
         <File Category="source" Condition="" Name="Middlewares/Third_Party/SFUD/sfud_sfdp.c"/>
     </RefComponent>
+    <RefComponent Cclass="FilesCcDriver" Cgroup="ADuM4160" Cversion="1Gg1Gg0">
+        <File Category="source" Condition="" Name="Middlewares/Third_Party/ADuM4160/drv_adum4160.c"/>
+        <File Category="header" Condition="" Name="Middlewares/Third_Party/ADuM4160/drv_adum4160.h"/>
+    </RefComponent>
     <RefComponent Cclass="FilesCcModule" Cgroup="cJSON" Cversion="1Gg0Gg0">
         <File Category="source" Condition="" Name="Middlewares/Third_Party/cJSON/cJSON.c"/>
         <File Category="header" Condition="" Name="Middlewares/Third_Party/cJSON/cJSON.h"/>
@@ -152,6 +168,7 @@
         <File Category="source" Condition="" Name="Middlewares/Third_Party/Serial_Logger/module_logger.c"/>
         <File Category="header" Condition="" Name="Middlewares/Third_Party/Serial_Logger/module_logger.h"/>
     </RefComponent>
+    <RefComponent Cclass="FilesCcModule" Cgroup="System" Cversion="1Gg0Gg0"/>
     <RefComponent Cclass="FilesCcUtility" Cgroup="CRC16" Cversion="1Gg0Gg0">
         <File Category="source" Condition="" Name="Utilities/CRC16/module_crc16_xmodem.c"/>
         <File Category="header" Condition="" Name="Utilities/CRC16/module_crc16_xmodem.h"/>
