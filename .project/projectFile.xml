@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2025-01-04" version="1.3.6">-Add Module OTA</release>
         <release date="2025-01-03" version="1.3.5">-Add Module System FTL
 -Add Driver ADuM4160</release>
         <release date="2025-01-02" version="1.3.4">-Add Serial Logger Raw Output</release>
@@ -60,12 +61,6 @@
     <conditions>
         <condition id="Condition Need Top Header">
             <require Cclass="Common" Cgroup="Header"/>
-        </condition>
-        <condition id="Condition RCP">
-            <require Cclass="Common" Cgroup="Header"/>
-            <require Cclass="Module" Cgroup="CRC16"/>
-            <require Cclass="Module" Cgroup="QFsm"/>
-            <require Cclass="Module" Cgroup="RingFIFO"/>
         </condition>
     </conditions>
     <components>
@@ -136,6 +131,10 @@
             </component>
             <component Cgroup="System" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of System</description>
+                <files/>
+            </component>
+            <component Cgroup="OTA" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of OTA</description>
                 <files/>
             </component>
         </bundle>

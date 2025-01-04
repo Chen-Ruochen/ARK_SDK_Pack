@@ -62,6 +62,27 @@ void I_CUBE_System_Get_License(uint8_t *license)
     /* USER CODE END I_CUBE_System_Get_License 0 */
 }
 
+void I_CUBE_System_Get_Version(uint8_t *version)
+{
+    /* USER CODE BEGIN I_CUBE_System_Get_Version 0 */
+
+    /* USER CODE END I_CUBE_System_Get_Version 0 */
+}
+
+void I_CUBE_System_Get_BuildTime(uint8_t *buildTime)
+{
+    /* USER CODE BEGIN I_CUBE_System_Get_BuildTime 0 */
+
+    /* USER CODE END I_CUBE_System_Get_BuildTime 0 */
+}
+
+void I_CUBE_System_Error_Handler(const char *file, const long line)
+{
+    /* USER CODE BEGIN I_CUBE_System_Error_Handler 0 */
+
+    /* USER CODE END I_CUBE_System_Error_Handler 0 */
+}
+
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */

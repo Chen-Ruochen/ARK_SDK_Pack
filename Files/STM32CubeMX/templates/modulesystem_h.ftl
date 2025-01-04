@@ -38,6 +38,9 @@ void I_CUBE_System_Sleep(void);
 void I_CUBE_System_Get_BootReason(uint8_t *reason);
 void I_CUBE_System_Get_SerialNumber(uint8_t *sn);
 void I_CUBE_System_Get_License(uint8_t *license);
+void I_CUBE_System_Get_Version(uint8_t *version);
+void I_CUBE_System_Get_BuildTime(uint8_t *buildTime);
+void I_CUBE_System_Error_Handler(const char *file, const long line);
 
 /* USER CODE BEGIN 1 */
 
