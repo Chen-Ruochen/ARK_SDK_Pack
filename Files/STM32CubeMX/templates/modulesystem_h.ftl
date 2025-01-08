@@ -33,6 +33,7 @@ extern "C" {
 
 /* USER CODE END 0 */
 
+void I_CUBE_System_Init(void);
 void I_CUBE_System_Reset(void);
 void I_CUBE_System_Sleep(void);
 void I_CUBE_System_Get_BootReason(uint8_t *reason);

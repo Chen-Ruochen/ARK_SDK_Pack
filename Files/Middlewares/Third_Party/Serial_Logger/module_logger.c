@@ -7,6 +7,16 @@
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
 #include "module_logger.h"
+#include "app_logger_conf.h"
+
+//4:debug, 3:info, 2:warn, 1:error
+#ifndef LOGGER_LEVEL
+#define LOGGER_LEVEL            (4)
+#endif
+
+#ifndef LOGGER_LENGTH
+#define LOGGER_LENGTH           (256)
+#endif
 
 typedef struct logger_s {
     bool log_init;

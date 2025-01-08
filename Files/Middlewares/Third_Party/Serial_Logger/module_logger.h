@@ -15,15 +15,6 @@
 extern "C" {
 #endif
 
-//4:debug, 3:info, 2:warn, 1:error
-#ifndef LOGGER_LEVEL
-#define LOGGER_LEVEL            (4)
-#endif
-
-#ifndef LOGGER_LENGTH
-#define LOGGER_LENGTH           (256)
-#endif
-
 typedef ark_err_t   (*mutex_init)(void);
 typedef ark_err_t   (*mutex_set)(bool lock);
 typedef ark_err_t   (*mutex_get)(void);

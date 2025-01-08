@@ -1,15 +1,11 @@
 [#ftl]
 [#assign valVersion = "1.0.0"]
-[#assign valLevel = 4]
-[#assign valLoggerLength = 256]
 [#-- SWIPdatas is a list of SWIPconfigModel --]
 [#list SWIPdatas as SWIP]
 [#if SWIP.defines??]
 [#list SWIP.defines as definition]
 [#compress]
 [#if definition.name == "LOGGER_VERSION"] [#assign valVersion = definition.value] [/#if]
-[#if definition.name == "LOGGER_LEVEL"] [#assign valLevel = definition.value] [/#if]
-[#if definition.name == "LOGGER_LENGTH"] [#assign valLoggerLength = definition.value] [/#if]
 [/#compress]
 [/#list]
 [/#if]
@@ -33,9 +29,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-#define LOGGER_LEVEL        (${valLevel})
-#define LOGGER_LENGTH       (${valLoggerLength})
 
 /* USER CODE BEGIN 0 */
 

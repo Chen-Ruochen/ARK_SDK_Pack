@@ -27,6 +27,13 @@
 
 /* USER CODE END 0 */
 
+void I_CUBE_System_Init(void)
+{
+    /* USER CODE BEGIN I_CUBE_System_Init 0 */
+
+    /* USER CODE END I_CUBE_System_Init 0 */
+}
+
 void I_CUBE_System_Reset(void)
 {
     /* USER CODE BEGIN I_CUBE_System_Reset 0 */
