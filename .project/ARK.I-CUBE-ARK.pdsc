@@ -5,6 +5,8 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2025-01-24" version="1.3.9">-Add Support MD5
+-Add Support AES128</release>
         <release date="2025-01-20" version="1.3.8">-Change OTA Params</release>
         <release date="2025-01-08" version="1.3.7">-Add Module System Init
 -Change Logger Params</release>
@@ -56,7 +58,7 @@
         <keyword>IMPLEMENTED_WITH_STM32CUBEMX</keyword>
     </keywords>
     <taxonomy>
-        <description Cclass="Utility">Utility</description>
+        <description Cclass="Support">Support</description>
         <description Cclass="Module">Module</description>
         <description Cclass="Common">Common</description>
         <description Cclass="Driver">Driver</description>
@@ -141,29 +143,40 @@
                 <files/>
             </component>
         </bundle>
-        <bundle Cbundle="Files" Cclass="Utility" Cversion="1.0.0">
-            <description>Bundle of Utilities</description>
+        <bundle Cbundle="Files" Cclass="Support" Cversion="1.0.0">
+            <description>Bundle of Support</description>
             <doc>https://github.com/Chen-Ruochen/ARK_SDK_Pack</doc>
             <component Cgroup="CRC16" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of CRC16</description>
                 <files>
-                    <file category="source" name="Utilities/CRC16/module_crc16_xmodem.c"/>
-                    <file category="header" name="Utilities/CRC16/module_crc16_xmodem.h"/>
+                    <file category="source" name="Middlewares/Third_Party/CRC16/crc16_xmodem.c"/>
+                    <file category="header" name="Middlewares/Third_Party/CRC16/crc16_xmodem.h"/>
                 </files>
             </component>
             <component Cgroup="QFsm" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of QFsm</description>
                 <files>
-                    <file category="source" name="Utilities/QFsm/module_qfsm.c"/>
-                    <file category="header" name="Utilities/QFsm/module_qfsm.h"/>
+                    <file category="source" name="Middlewares/Third_Party/QFsm/qfsm.c"/>
+                    <file category="header" name="Middlewares/Third_Party/QFsm/qfsm.h"/>
                 </files>
             </component>
             <component Cgroup="RingFIFO" condition="Condition Need Top Header" maxInstances="1">
                 <description>Component of RingFIFO</description>
                 <files>
-                    <file category="source" name="Utilities/RingFIFO/module_ring_fifo.c"/>
-                    <file category="header" name="Utilities/RingFIFO/module_ring_fifo.h"/>
+                    <file category="source" name="Middlewares/Third_Party/RingFIFO/ring_fifo.c"/>
+                    <file category="header" name="Middlewares/Third_Party/RingFIFO/ring_fifo.h"/>
                 </files>
+            </component>
+            <component Cgroup="MD5" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of MD5</description>
+                <files>
+                    <file category="source" name="Middlewares/Third_Party/MD5/md5.c"/>
+                    <file category="header" name="Middlewares/Third_Party/MD5/md5.h"/>
+                </files>
+            </component>
+            <component Cgroup="AES128" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of AES128</description>
+                <files/>
             </component>
         </bundle>
     </components>

@@ -2,11 +2,11 @@
  * @Description  : CRC16头文件
  * @Author       : Jason Chen
  * @Date         : 2024-12-10 16:46:45
- * @FilePath     : module_crc16_xmodem.h
+ * @FilePath     : crc16_xmodem.h
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#ifndef __MODULE_CRC16_XMODEM_H
-#define __MODULE_CRC16_XMODEM_H
+#ifndef __CRC16_XMODEM_H
+#define __CRC16_XMODEM_H
 
 #include "common_lib.h"
 

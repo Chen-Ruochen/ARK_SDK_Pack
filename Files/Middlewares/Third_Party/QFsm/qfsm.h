@@ -2,11 +2,11 @@
  * @Description  : 有限状态机头文件
  * @Author       : Jason Chen
  * @Date         : 2024-12-11 10:22:04
- * @FilePath     : module_qfsm.h
+ * @FilePath     : qfsm.h
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#ifndef __MODULE_QFSM_H
-#define __MODULE_QFSM_H
+#ifndef __QFSM_H
+#define __QFSM_H
 
 #include "common_lib.h"
 

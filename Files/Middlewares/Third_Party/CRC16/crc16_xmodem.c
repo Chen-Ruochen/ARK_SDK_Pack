@@ -2,10 +2,10 @@
  * @Description  : CRC16校验
  * @Author       : Jason Chen
  * @Date         : 2024-12-10 16:46:01
- * @FilePath     : module_crc16_xmodem.c
+ * @FilePath     : crc16_xmodem.c
  * @Copyright 2024 Jason Chen, All Rights Reserved.
  **********************************/
-#include "module_crc16_xmodem.h"
+#include "crc16_xmodem.h"
 
 
 /**********************************
