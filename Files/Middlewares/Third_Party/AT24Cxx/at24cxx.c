@@ -173,7 +173,14 @@ at24c_err_t at24cxx_write_muti_byte(at24cxx_dev_t *dev, uint16_t start_page, uin
             if (start_page >= dev->max_page || offset >= dev->bytes_in_page) {
                 return AT24C_ERROR;
             }
-            uint8_t bytes_2_write = ARK_MIN(dev->bytes_in_page - (offset % dev->bytes_in_page), len);
+
+            uint8_t bytes_2_write = 0;
+            if ((dev->bytes_in_page - (offset % dev->bytes_in_page)) < len) {
+                bytes_2_write = dev->bytes_in_page - (offset % dev->bytes_in_page);
+            } else {
+                bytes_2_write = len;
+            }
+
             uint16_t addr = at24cxx_cap_address(dev, start_page, offset);
             if (dev->iic_write(addr, data, bytes_2_write) != AT24C_OK) {
                 return AT24C_ERROR;
@@ -209,7 +216,14 @@ at24c_err_t at24cxx_read_muti_byte(at24cxx_dev_t *dev, uint16_t start_page, uint
             if (start_page >= dev->max_page || offset >= dev->bytes_in_page) {
                 return AT24C_ERROR;
             }
-            uint8_t bytes_2_read = ARK_MIN(dev->bytes_in_page - (offset % dev->bytes_in_page), len);
+
+            uint8_t bytes_2_read = 0;
+            if ((dev->bytes_in_page - (offset % dev->bytes_in_page)) < len) {
+                bytes_2_read = dev->bytes_in_page - (offset % dev->bytes_in_page);
+            } else {
+                bytes_2_read = len;
+            }
+
             uint16_t addr = at24cxx_cap_address(dev, start_page, offset);
             if (dev->iic_read(addr, data, bytes_2_read) != AT24C_OK) {
                 return AT24C_ERROR;

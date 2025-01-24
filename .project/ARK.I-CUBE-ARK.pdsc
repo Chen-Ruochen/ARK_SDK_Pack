@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2024-01-24" version="1.4.1">-Fixed AT24Cxx error</release>
         <release date="2025-01-24" version="1.4.0">-Add AT24Cxx Drivers</release>
         <release date="2025-01-24" version="1.3.9">-Add Support MD5
 -Add Support AES128</release>
