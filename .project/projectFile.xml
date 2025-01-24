@@ -5,6 +5,7 @@
     <description>ARK SDK Source Code</description>
     <url/>
     <releases>
+        <release date="2025-01-24" version="1.4.0">-Add AT24Cxx Drivers</release>
         <release date="2025-01-24" version="1.3.9">-Add Support MD5
 -Add Support AES128</release>
         <release date="2025-01-20" version="1.3.8">-Change OTA Params</release>
@@ -114,6 +115,13 @@
                 <files>
                     <file category="source" name="D:/ARK_SDK/Driver/adum4160/drv_adum4160.c::Middlewares/Third_Party/ADuM4160/drv_adum4160.c"/>
                     <file category="header" name="D:/ARK_SDK/Driver/adum4160/drv_adum4160.h::Middlewares/Third_Party/ADuM4160/drv_adum4160.h"/>
+                </files>
+            </component>
+            <component Cgroup="AT24Cxx" condition="Condition Need Top Header" maxInstances="1">
+                <description>Component of AT24Cxx</description>
+                <files>
+                    <file category="source" name="D:/ARK_SDK/Driver/at24cxx/at24cxx.c::Middlewares/Third_Party/AT24Cxx/at24cxx.c"/>
+                    <file category="header" name="D:/ARK_SDK/Driver/at24cxx/at24cxx.h::Middlewares/Third_Party/AT24Cxx/at24cxx.h"/>
                 </files>
             </component>
         </bundle>
